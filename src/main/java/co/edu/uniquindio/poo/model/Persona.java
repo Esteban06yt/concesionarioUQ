@@ -7,18 +7,18 @@ public abstract class Persona {
     private String cedula;
     private String correo;
     private String telefono;
-    private LocalDate fechaNacmiento;
+    private LocalDate fechaNacimiento;
     private String usuario;
     private String contraseña;
     private String preguntaSeguridad;
     private String fraseSeguridad;
 
-    public Persona (String nombre, String cedula, String correo, String telefono, LocalDate fechaNacmiento, String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad) {
+    public Persona (String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento, String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.correo = correo;
         this.telefono = telefono;
-        this.fechaNacmiento = fechaNacmiento;
+        this.fechaNacimiento = fechaNacimiento;
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.preguntaSeguridad = preguntaSeguridad;
@@ -53,11 +53,11 @@ public abstract class Persona {
         this.telefono = telefono;
     }
 
-    public LocalDate getFechaNacmiento() {
-        return fechaNacmiento;
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
-    public void setFechaNacmiento(LocalDate fechaNacmiento) {
-        this.fechaNacmiento = fechaNacmiento;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getUsuario() {
@@ -90,6 +90,6 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        return "Persona [nombre=" + nombre + ", cedula=" + cedula + ", correo=" + correo + ", telefono=" + telefono + ", fechaNacmiento=" + fechaNacmiento + ", usuario=" + usuario + ", contraseña=" + contraseña + ", preguntaSeguridad=" + preguntaSeguridad + ", fraseSeguridad=" + fraseSeguridad + "]";
+        return "Persona [nombre=" + nombre + ", cedula=" + cedula + ", correo=" + correo + ", telefono=" + telefono + ", fechaNacimiento=" + fechaNacimiento + ", usuario=" + usuario + ", contraseña=" + contraseña + ", preguntaSeguridad=" + preguntaSeguridad + ", fraseSeguridad=" + fraseSeguridad + "]";
     }
 }

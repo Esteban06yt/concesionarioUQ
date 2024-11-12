@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.model;
 import javafx.scene.image.Image;
 
 public abstract class Vehiculo {
+    private String idVehiculo;
     private String marca;
     private String modelo;
     private Integer cambios;
@@ -13,7 +14,8 @@ public abstract class Vehiculo {
     private Estado estado;
     private Combustible combustible;
 
-    public Vehiculo (String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Image foto, Transmision transmision, Estado estado, Combustible combustible) {
+    public Vehiculo (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Image foto, Transmision transmision, Estado estado, Combustible combustible) {
+        this.idVehiculo = idVehiculo;
         this.marca = marca;
         this.modelo = modelo;
         this.cambios = cambios;
@@ -23,6 +25,13 @@ public abstract class Vehiculo {
         this.transmision = transmision;
         this.estado = estado;
         this.combustible = combustible;
+    }
+
+    public String getIdVehiculo() {
+        return idVehiculo;
+    }
+    public void setIdVehiculo(String idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
     public String getMarca() {
@@ -90,6 +99,6 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", cambios=" + cambios + ", velocidadMaxima=" + velocidadMaxima + ", cilindraje=" + cilindraje + ", foto=" + foto + ", transmision=" + transmision + ", estado=" + estado + ", combustible=" + combustible + "]";
+        return "Vehiculo [idVehiculo=" + idVehiculo + ", marca=" + marca + ", modelo=" + modelo + ", cambios=" + cambios + ", velocidadMaxima=" + velocidadMaxima + ", cilindraje=" + cilindraje + ", foto=" + foto + ", transmision=" + transmision + ", estado=" + estado + ", combustible=" + combustible + "]";
     }
 }
