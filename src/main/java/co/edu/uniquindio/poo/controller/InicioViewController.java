@@ -1,8 +1,7 @@
-package co.edu.uniquindio.poo.controller; 
+package co.edu.uniquindio.poo.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +30,6 @@ public class InicioViewController {
     @FXML
     void abrirVentanaCliente(ActionEvent event) {
         //Al presionar el Botón Cliente se abre la ventana para el Login del cliente
-        
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/ClienteLoginView.fxml"));
             Parent root = loader.load();
