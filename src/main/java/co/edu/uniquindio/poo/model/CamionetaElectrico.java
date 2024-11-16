@@ -7,8 +7,15 @@ public class CamionetaElectrico extends VehiculoConfortElectrico {
     private Boolean asistentePermaneciaCarril;
     private Boolean traccion4x4;
 
-    public CamionetaElectrico (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible, Float autonomia, Float tiempoCarga, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs, Boolean velocidadCrucero, Boolean sensoresColision, Boolean sensorTraficoCruzado, Boolean asistentePermaneciaCarril, Boolean traccion4x4) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible, autonomia, tiempoCarga, numeroPasajeros, numeroPuertas, capacidadMaletero, aireAcondicionado, camaraReversa, numeroBolsasAire, abs);
+    public CamionetaElectrico(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
+            Float cilindraje, Transmision transmision, Estado estado, String combustible, Float autonomia,
+            Float tiempoCarga, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero,
+            Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs,
+            Boolean velocidadCrucero, Boolean sensoresColision, Boolean sensorTraficoCruzado,
+            Boolean asistentePermaneciaCarril, Boolean traccion4x4) {
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible,
+                autonomia, tiempoCarga, numeroPasajeros, numeroPuertas, capacidadMaletero, aireAcondicionado,
+                camaraReversa, numeroBolsasAire, abs);
         this.velocidadCrucero = velocidadCrucero;
         this.sensoresColision = sensoresColision;
         this.sensorTraficoCruzado = sensorTraficoCruzado;
@@ -19,6 +26,7 @@ public class CamionetaElectrico extends VehiculoConfortElectrico {
     public Boolean getVelocidadCrucero() {
         return velocidadCrucero;
     }
+
     public void setVelocidadCrucero(Boolean velocidadCrucero) {
         this.velocidadCrucero = velocidadCrucero;
     }
@@ -26,6 +34,7 @@ public class CamionetaElectrico extends VehiculoConfortElectrico {
     public Boolean getSensoresColision() {
         return sensoresColision;
     }
+
     public void setSensoresColision(Boolean sensoresColision) {
         this.sensoresColision = sensoresColision;
     }
@@ -33,6 +42,7 @@ public class CamionetaElectrico extends VehiculoConfortElectrico {
     public Boolean getSensorTraficoCruzado() {
         return sensorTraficoCruzado;
     }
+
     public void setSensorTraficoCruzado(Boolean sensorTraficoCruzado) {
         this.sensorTraficoCruzado = sensorTraficoCruzado;
     }
@@ -40,6 +50,7 @@ public class CamionetaElectrico extends VehiculoConfortElectrico {
     public Boolean getAsistentePermaneciaCarril() {
         return asistentePermaneciaCarril;
     }
+
     public void setAsistentePermaneciaCarril(Boolean asistentePermaneciaCarril) {
         this.asistentePermaneciaCarril = asistentePermaneciaCarril;
     }
@@ -47,6 +58,7 @@ public class CamionetaElectrico extends VehiculoConfortElectrico {
     public Boolean getTraccion4x4() {
         return traccion4x4;
     }
+
     public void setTraccion4x4(Boolean traccion4x4) {
         this.traccion4x4 = traccion4x4;
     }

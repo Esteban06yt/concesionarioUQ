@@ -8,7 +8,9 @@ public class CamionDiesel extends VehiculoDiesel {
     private Integer numeroEjes;
     private String tipoCamion;
 
-    public CamionDiesel (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible, Float capacidadCarga, Boolean aireAcondicionado, Boolean frenosAire, Boolean abs, Integer numeroEjes, String tipoCamion) {
+    public CamionDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
+            Float cilindraje, Transmision transmision, Estado estado, String combustible, Float capacidadCarga,
+            Boolean aireAcondicionado, Boolean frenosAire, Boolean abs, Integer numeroEjes, String tipoCamion) {
         super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible);
         this.capacidadCarga = capacidadCarga;
         this.aireAcondicionado = aireAcondicionado;
@@ -21,6 +23,7 @@ public class CamionDiesel extends VehiculoDiesel {
     public Float getCapacidadCarga() {
         return capacidadCarga;
     }
+
     public void setCapacidadCarga(Float capacidadCarga) {
         this.capacidadCarga = capacidadCarga;
     }
@@ -28,6 +31,7 @@ public class CamionDiesel extends VehiculoDiesel {
     public Boolean getAireAcondicionado() {
         return aireAcondicionado;
     }
+
     public void setAireAcondicionado(Boolean aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
@@ -35,6 +39,7 @@ public class CamionDiesel extends VehiculoDiesel {
     public Boolean getFrenosAire() {
         return frenosAire;
     }
+
     public void setFrenosAire(Boolean frenosAire) {
         this.frenosAire = frenosAire;
     }
@@ -42,6 +47,7 @@ public class CamionDiesel extends VehiculoDiesel {
     public Boolean getAbs() {
         return abs;
     }
+
     public void setAbs(Boolean abs) {
         this.abs = abs;
     }
@@ -49,6 +55,7 @@ public class CamionDiesel extends VehiculoDiesel {
     public Integer getNumeroEjes() {
         return numeroEjes;
     }
+
     public void setNumeroEjes(Integer numeroEjes) {
         this.numeroEjes = numeroEjes;
     }
@@ -56,6 +63,7 @@ public class CamionDiesel extends VehiculoDiesel {
     public String getTipoCamion() {
         return tipoCamion;
     }
+
     public void setTipoCamion(String tipoCamion) {
         this.tipoCamion = tipoCamion;
     }

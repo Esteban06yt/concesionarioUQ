@@ -9,7 +9,10 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     private Integer numeroBolsasAire;
     private Boolean abs;
 
-    public VehiculoConfortGasolina (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs) {
+    public VehiculoConfortGasolina(String idVehiculo, String marca, String modelo, Integer cambios,
+            Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible,
+            Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado,
+            Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs) {
         super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
@@ -23,6 +26,7 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     public Integer getNumeroPasajeros() {
         return numeroPasajeros;
     }
+
     public void setNumeroPasajeros(Integer numeroPasajeros) {
         this.numeroPasajeros = numeroPasajeros;
     }
@@ -30,6 +34,7 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     public Integer getNumeroPuertas() {
         return numeroPuertas;
     }
+
     public void setNumeroPuertas(Integer numeroPuertas) {
         this.numeroPuertas = numeroPuertas;
     }
@@ -37,6 +42,7 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     public Float getCapacidadMaletero() {
         return capacidadMaletero;
     }
+
     public void setCapacidadMaletero(Float capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
     }
@@ -44,6 +50,7 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     public Boolean getAireAcondicionado() {
         return aireAcondicionado;
     }
+
     public void setAireAcondicionado(Boolean aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
@@ -51,6 +58,7 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     public Boolean getCamaraReversa() {
         return camaraReversa;
     }
+
     public void setCamaraReversa(Boolean camaraReversa) {
         this.camaraReversa = camaraReversa;
     }
@@ -58,6 +66,7 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     public Integer getNumeroBolsasAire() {
         return numeroBolsasAire;
     }
+
     public void setNumeroBolsasAire(Integer numeroBolsasAire) {
         this.numeroBolsasAire = numeroBolsasAire;
     }
@@ -65,6 +74,7 @@ public abstract class VehiculoConfortGasolina extends VehiculoGasolina {
     public Boolean getAbs() {
         return abs;
     }
+
     public void setAbs(Boolean abs) {
         this.abs = abs;
     }

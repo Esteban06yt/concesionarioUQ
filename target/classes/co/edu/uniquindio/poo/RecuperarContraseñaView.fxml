@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:controller="co.edu.uniquindio.poo.controller.RecuperarContraseñaViewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.controller.RecuperarContraseñaViewController">
    <children>
       <Label layoutX="157.0" layoutY="14.0" text="Recuperación de contraseña">
          <font>
@@ -17,11 +17,16 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <Label layoutX="7.0" layoutY="4.0" text="Ingrese los siquientes datos para recuperar su contraseña:  " />
-                  <Label layoutX="14.0" layoutY="41.0" text="Correo electrónico: " />
-                  <TextField fx:id="txtCorreo" layoutX="162.0" layoutY="36.0" prefHeight="31.0" prefWidth="314.0" />
+                  <Label layoutX="7.0" layoutY="41.0" text="Correo electrónico: " />
+                  <TextField fx:id="txtCorreo" layoutX="138.0" layoutY="36.0" prefHeight="31.0" prefWidth="270.0" />
                   <Label layoutX="7.0" layoutY="74.0" text="Por favor responda la pregunta de seguridad:" />
                   <Label fx:id="labelPreguntaSeguridad" layoutX="7.0" layoutY="103.0" prefHeight="21.0" prefWidth="497.0" text="Pregunta de seguridad" />
                   <TextField fx:id="txtFraseSeguridad" layoutX="36.0" layoutY="132.0" prefHeight="31.0" prefWidth="440.0" />
+                  <Button fx:id="btnConfirmarCorreo" layoutX="424.0" layoutY="40.0" mnemonicParsing="false" onAction="#confirmarCorreo" text="Confirmar">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="68.0" prefWidth="520.0">

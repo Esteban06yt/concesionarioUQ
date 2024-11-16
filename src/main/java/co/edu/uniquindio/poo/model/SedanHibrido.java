@@ -6,8 +6,15 @@ public class SedanHibrido extends VehiculoConfortHibrido {
     private Boolean sensorTraficoCruzado;
     private Boolean asistentePermanenciaCarril;
 
-    public SedanHibrido (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible, Boolean enchufable, Boolean hibridoLigero, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs, Boolean velocidadCrucero, Boolean sensoresColision, Boolean sensorTraficoCruzado, Boolean asistentePermanenciaCarril) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible, enchufable, hibridoLigero, numeroPasajeros, numeroPuertas, capacidadMaletero, aireAcondicionado, camaraReversa, numeroBolsasAire, abs);
+    public SedanHibrido(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
+            Float cilindraje, Transmision transmision, Estado estado, String combustible, Boolean enchufable,
+            Boolean hibridoLigero, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero,
+            Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs,
+            Boolean velocidadCrucero, Boolean sensoresColision, Boolean sensorTraficoCruzado,
+            Boolean asistentePermanenciaCarril) {
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible,
+                enchufable, hibridoLigero, numeroPasajeros, numeroPuertas, capacidadMaletero, aireAcondicionado,
+                camaraReversa, numeroBolsasAire, abs);
         this.velocidadCrucero = velocidadCrucero;
         this.sensoresColision = sensoresColision;
         this.sensorTraficoCruzado = sensorTraficoCruzado;
@@ -17,6 +24,7 @@ public class SedanHibrido extends VehiculoConfortHibrido {
     public Boolean getVelocidadCrucero() {
         return velocidadCrucero;
     }
+
     public void setVelocidadCrucero(Boolean velocidadCrucero) {
         this.velocidadCrucero = velocidadCrucero;
     }
@@ -24,6 +32,7 @@ public class SedanHibrido extends VehiculoConfortHibrido {
     public Boolean getSensoresColision() {
         return sensoresColision;
     }
+
     public void setSensoresColision(Boolean sensoresColision) {
         this.sensoresColision = sensoresColision;
     }
@@ -31,6 +40,7 @@ public class SedanHibrido extends VehiculoConfortHibrido {
     public Boolean getSensorTraficoCruzado() {
         return sensorTraficoCruzado;
     }
+
     public void setSensorTraficoCruzado(Boolean sensorTraficoCruzado) {
         this.sensorTraficoCruzado = sensorTraficoCruzado;
     }
@@ -38,6 +48,7 @@ public class SedanHibrido extends VehiculoConfortHibrido {
     public Boolean getAsistentePermanenciaCarril() {
         return asistentePermanenciaCarril;
     }
+
     public void setAsistentePermanenciaCarril(Boolean asistentePermanenciaCarril) {
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }

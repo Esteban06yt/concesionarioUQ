@@ -3,66 +3,113 @@ package co.edu.uniquindio.poo.model;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
-public class Administrador extends Persona{
+public class Administrador extends Persona {
     private String idAdministrador;
-    private LinkedList<Administrador> listaAdministradores = new LinkedList<>();
+    private LinkedList<Empleado> listaempleados;
 
-    public Administrador (String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento, String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad, String idAdministrador){
-        super (nombre, cedula, correo, telefono, fechaNacimiento, usuario, contraseña, preguntaSeguridad, fraseSeguridad);
+    public Administrador(String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento,
+            String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad,
+            String idAdministrador) {
+        super(nombre, cedula, correo, telefono, fechaNacimiento, usuario, contraseña, preguntaSeguridad,
+                fraseSeguridad);
         this.idAdministrador = idAdministrador;
+        listaempleados = new LinkedList<>();
     }
 
     public String getIdAdministrador() {
         return idAdministrador;
     }
+
     public void setIdAdministrador(String idAdministrador) {
         this.idAdministrador = idAdministrador;
     }
 
-    public String crear(Administrador nuevoAdministrador) {
-        if (buscar(nuevoAdministrador.getIdAdministrador()) != null) {
-            return "\nEl administrador ya está registrado.";
-        }
-        listaAdministradores.add(nuevoAdministrador);
-        return "\nAdministrador agregado exitosamente.";
+    public LinkedList<Empleado> getListaempleados() {
+        return listaempleados;
     }
 
-    public LinkedList<Administrador> obtener() {
-        return listaAdministradores;
+    public void setListaempleados(LinkedList<Empleado> listaempleados) {
+        this.listaempleados = listaempleados;
     }
 
-    public Administrador buscar(String idAdministrador) {
-        for (Administrador administrador : listaAdministradores) {
-            if (administrador.getIdAdministrador().equals(idAdministrador)) {
-                return administrador;
-            }
+    /**
+     * Agrega un empleado si este no existe
+     * 
+     * @param empleado
+     * @return mensaje indicando si fue añadido o ya existe
+     * @throws IllegalArgumentException
+     */
+    public String AgregarEmpleado(Empleado empleado) throws IllegalArgumentException {
+        String respuesta = "El empleado se añadió correctamente";
+        if (empleado == null) {
+            throw new IllegalArgumentException("El empleado no puede ser nulo");
         }
-        return null;
+        Empleado empleadoAux = BuscarEmpleado(empleado.getCedula());
+        if (empleadoAux == null) {
+            listaempleados.add(empleado);
+        } else {
+            respuesta = "Este empleado ya existe";
+        }
+        return respuesta;
     }
 
-    public String actualizar(String idAdministrador, String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento, String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad) {
-        Administrador administrador = buscar(idAdministrador);
-        if (administrador != null) {
-            administrador.setNombre(nombre);
-            administrador.setCedula(cedula);
-            administrador.setCorreo(correo);
-            administrador.setTelefono(telefono);
-            administrador.setFechaNacimiento(fechaNacimiento);
-            administrador.setUsuario(usuario);
-            administrador.setContraseña(contraseña);
-            administrador.setPreguntaSeguridad(preguntaSeguridad);
-            administrador.setFraseSeguridad(fraseSeguridad);
-            return "\nInformación del administrador actualizada correctamente.";
-        }
-        return "\nEl administrador no se encuentra registrado.";
+    /**
+     * Busca un empleado mediante su cédula en la lista de empleados
+     * 
+     * @param cedula
+     * @return el empleado si es encontrado o null en caso contrario
+     */
+    public Empleado BuscarEmpleado(String cedula) {
+        return listaempleados.stream()
+                .filter(empleadoAux -> empleadoAux.getCedula().equals(cedula))
+                .findFirst()
+                .orElse(null);
     }
 
-    public String eliminar(String idAdministrador) {
-        Administrador administrador = buscar(idAdministrador);
-        if (administrador != null) {
-            listaAdministradores.remove(administrador);
-            return "\nEl administrador ha sido eliminado correctamente.";
+    /**
+     * Elimina un empleado siempre y cuando este exista en la lista
+     * 
+     * @param empleado
+     * @return un mensaje indicando si fue eliminado o no existe
+     * @throws IllegalArgumentException
+     */
+    public String EliminarEmpleado(Empleado empleado) throws IllegalArgumentException {
+        String respuesta = "El empleado se eliminó correctamente";
+        if (empleado == null) {
+            throw new IllegalArgumentException("El empleado no puede ser nulo");
         }
-        return "\nEl administrador no existe.";
+        Empleado empleadoAux = BuscarEmpleado(empleado.getCedula());
+        if (empleadoAux != null) {
+            listaempleados.remove(empleado);
+        } else {
+            respuesta = "Este empleado no existe";
+        }
+        return respuesta;
     }
+
+    /**
+     * Actualiza un empleado de la lista eliminándolo y añadiendo la versión
+     * actualizada siempre y cuando este exista
+     * 
+     * @param empleado
+     * @param empleadoActualizado
+     * @return un mensaje indicando si se pudo actualizar o no existe
+     * @throws IllegalArgumentException
+     */
+    public String ActualizarEmpleado(Empleado empleado, Empleado empleadoActualizado) throws IllegalArgumentException {
+        String respuesta = "El empleado ha sido actualizado";
+
+        if (empleado == null || empleadoActualizado == null) {
+            throw new IllegalArgumentException("El empleado no puede ser nulo");
+        }
+        Empleado empleadoAux = BuscarEmpleado(empleado.getCedula());
+        if (empleadoAux != null) {
+            listaempleados.remove(empleado);
+            listaempleados.add(empleadoActualizado);
+        } else {
+            respuesta = "Este empleado no existe";
+        }
+        return respuesta;
+    }
+
 }

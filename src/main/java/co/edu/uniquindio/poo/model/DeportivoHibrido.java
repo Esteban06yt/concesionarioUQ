@@ -7,8 +7,12 @@ public class DeportivoHibrido extends VehiculoHibrido {
     private Integer caballosFuerza;
     private Float tiempoCienKmh;
 
-    public DeportivoHibrido (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible, Boolean enchufable, Boolean hibridoLigero, Integer numeroPasajeros, Integer numeroPuertas, Integer numeroBolsasAire, Integer caballosFuerza, Float tiempoCienKmh) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible, enchufable, hibridoLigero);
+    public DeportivoHibrido(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
+            Float cilindraje, Transmision transmision, Estado estado, String combustible, Boolean enchufable,
+            Boolean hibridoLigero, Integer numeroPasajeros, Integer numeroPuertas, Integer numeroBolsasAire,
+            Integer caballosFuerza, Float tiempoCienKmh) {
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible,
+                enchufable, hibridoLigero);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.numeroBolsasAire = numeroBolsasAire;
@@ -19,6 +23,7 @@ public class DeportivoHibrido extends VehiculoHibrido {
     public Integer getNumeroPasajeros() {
         return numeroPasajeros;
     }
+
     public void setNumeroPasajeros(Integer numeroPasajeros) {
         this.numeroPasajeros = numeroPasajeros;
     }
@@ -26,6 +31,7 @@ public class DeportivoHibrido extends VehiculoHibrido {
     public Integer getNumeroPuertas() {
         return numeroPuertas;
     }
+
     public void setNumeroPuertas(Integer numeroPuertas) {
         this.numeroPuertas = numeroPuertas;
     }
@@ -33,6 +39,7 @@ public class DeportivoHibrido extends VehiculoHibrido {
     public Integer getNumeroBolsasAire() {
         return numeroBolsasAire;
     }
+
     public void setNumeroBolsasAire(Integer numeroBolsasAire) {
         this.numeroBolsasAire = numeroBolsasAire;
     }
@@ -40,6 +47,7 @@ public class DeportivoHibrido extends VehiculoHibrido {
     public Integer getCaballosFuerza() {
         return caballosFuerza;
     }
+
     public void setCaballosFuerza(Integer caballosFuerza) {
         this.caballosFuerza = caballosFuerza;
     }
@@ -47,6 +55,7 @@ public class DeportivoHibrido extends VehiculoHibrido {
     public Float getTiempoCienKmh() {
         return tiempoCienKmh;
     }
+
     public void setTiempoCienKmh(Float tiempoCienKmh) {
         this.tiempoCienKmh = tiempoCienKmh;
     }
