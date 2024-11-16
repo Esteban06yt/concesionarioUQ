@@ -87,9 +87,4 @@ public abstract class Persona {
     public void setFraseSeguridad(String fraseSeguridad) {
         this.fraseSeguridad = fraseSeguridad;
     }
-
-    @Override
-    public String toString() {
-        return "Persona [nombre=" + nombre + ", cedula=" + cedula + ", correo=" + correo + ", telefono=" + telefono + ", fechaNacimiento=" + fechaNacimiento + ", usuario=" + usuario + ", contraseña=" + contraseña + ", preguntaSeguridad=" + preguntaSeguridad + ", fraseSeguridad=" + fraseSeguridad + "]";
-    }
 }

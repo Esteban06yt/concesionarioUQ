@@ -19,11 +19,6 @@ public class Empleado extends Persona {
         this.idEmpleado = idEmpleado;
     }
 
-    @Override
-    public String toString() {
-        return "Empleado [idEmpleado=" + idEmpleado + ", getNombre()=" + getNombre() + ", getCedula()=" + getCedula() + ", getCorreo()=" + getCorreo() + ", getTelefono()=" + getTelefono() + ", getFechaNacimiento()=" + getFechaNacimiento() + ", getUsuario()=" + getUsuario() + ", getContraseña()=" + getContraseña() + ", getPreguntaSeguridad()=" + getPreguntaSeguridad() + ", getFraseSeguridad()=" + getFraseSeguridad() + "]";
-    }
-
     public String crear(Empleado nuevoEmpleado) {
         if (buscar(nuevoEmpleado.getIdEmpleado()) != null) {
             return "\nEl empleado ya está registrado.";

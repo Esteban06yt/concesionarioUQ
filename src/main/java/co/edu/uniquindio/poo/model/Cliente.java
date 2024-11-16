@@ -10,11 +10,6 @@ public class Cliente extends Persona {
         super(nombre, cedula, correo, telefono, fechaNacimiento, usuario, contraseña, preguntaSeguridad, fraseSeguridad);
     }
 
-    @Override
-    public String toString() {
-        return "Cliente [getNombre()=" + getNombre() + ", getCedula()=" + getCedula() + ", getCorreo()=" + getCorreo() + ", getTelefono()=" + getTelefono() + ", getFechaNacimiento()=" + getFechaNacimiento() + ", getUsuario()=" + getUsuario() + ", getContraseña()=" + getContraseña() + ", getPreguntaSeguridad()=" + getPreguntaSeguridad() + ", getFraseSeguridad()=" + getFraseSeguridad() + "]";
-    }
-
     public String crear(Cliente nuevoCliente) {
         if (buscar(nuevoCliente.getCedula()) != null) {
             return "\nEl cliente ya está registrado.";

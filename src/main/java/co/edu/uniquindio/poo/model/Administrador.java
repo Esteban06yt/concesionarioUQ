@@ -19,11 +19,6 @@ public class Administrador extends Persona{
         this.idAdministrador = idAdministrador;
     }
 
-    @Override
-    public String toString() {
-        return "Administrador [idAdministrador=" + idAdministrador + ", getNombre()=" + getNombre() + ", getCedula()=" + getCedula() + ", getCorreo()=" + getCorreo() + ", getTelefono()=" + getTelefono() + ", getFechaNacimiento()=" + getFechaNacimiento() + ", getUsuario()=" + getUsuario() + ", getContraseña()=" + getContraseña() + ", getPreguntaSeguridad()=" + getPreguntaSeguridad() + ", getFraseSeguridad()=" + getFraseSeguridad() + "]";
-    }
-
     public String crear(Administrador nuevoAdministrador) {
         if (buscar(nuevoAdministrador.getIdAdministrador()) != null) {
             return "\nEl administrador ya está registrado.";

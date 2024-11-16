@@ -1,7 +1,5 @@
 package co.edu.uniquindio.poo.model;
 
-import javafx.scene.image.Image;
-
 public abstract class Vehiculo {
     private String idVehiculo;
     private String marca;
@@ -9,22 +7,18 @@ public abstract class Vehiculo {
     private Integer cambios;
     private Float velocidadMaxima;
     private Float cilindraje;
-    private Image foto;
     private Transmision transmision;
     private Estado estado;
-    private Combustible combustible;
 
-    public Vehiculo (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Image foto, Transmision transmision, Estado estado, Combustible combustible) {
+    public Vehiculo (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado) {
         this.idVehiculo = idVehiculo;
         this.marca = marca;
         this.modelo = modelo;
         this.cambios = cambios;
         this.velocidadMaxima = velocidadMaxima;
         this.cilindraje = cilindraje;
-        this.foto = foto;
         this.transmision = transmision;
         this.estado = estado;
-        this.combustible = combustible;
     }
 
     public String getIdVehiculo() {
@@ -69,13 +63,6 @@ public abstract class Vehiculo {
         this.cilindraje = cilindraje;
     }
 
-    public Image getFoto() {
-        return foto;
-    }
-    public void setFoto(Image foto) {
-        this.foto = foto;
-    }
-
     public Transmision getTransmision() {
         return transmision;
     }
@@ -88,17 +75,5 @@ public abstract class Vehiculo {
     }
     public void setEstado(Estado estado) {
         this.estado = estado;
-    }
-
-    public Combustible getCombustible() {
-        return combustible;
-    }
-    public void setCombustible(Combustible combustible) {
-        this.combustible = combustible;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehiculo [idVehiculo=" + idVehiculo + ", marca=" + marca + ", modelo=" + modelo + ", cambios=" + cambios + ", velocidadMaxima=" + velocidadMaxima + ", cilindraje=" + cilindraje + ", foto=" + foto + ", transmision=" + transmision + ", estado=" + estado + ", combustible=" + combustible + "]";
     }
 }

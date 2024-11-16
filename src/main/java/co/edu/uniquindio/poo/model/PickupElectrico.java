@@ -1,25 +1,25 @@
 package co.edu.uniquindio.poo.model;
 
-import javafx.scene.image.Image;
-
-public abstract class VehiculoConfort extends Vehiculo {
+public class PickupElectrico extends VehiculoElectrico {
     private Integer numeroPasajeros;
     private Integer numeroPuertas;
-    private Float capacidadMaletero;
     private Boolean aireAcondicionado;
     private Boolean camaraReversa;
     private Integer numeroBolsasAire;
     private Boolean abs;
+    private Boolean traccion4x4;
+    private Float capacidadCajaCarga;
 
-    public VehiculoConfort (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Image foto, Transmision transmision, Estado estado, Combustible combustible, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, foto, transmision, estado, combustible);
+    public PickupElectrico (String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible, Float autonomia, Float tiempoCarga, Integer numeroPasajeros, Integer numeroPuertas, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs, Boolean traccion4x4, Float capacidadCajaCarga) {
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible, autonomia, tiempoCarga);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
-        this.capacidadMaletero = capacidadMaletero;
         this.aireAcondicionado = aireAcondicionado;
         this.camaraReversa = camaraReversa;
         this.numeroBolsasAire = numeroBolsasAire;
         this.abs = abs;
+        this.traccion4x4 = traccion4x4;
+        this.capacidadCajaCarga = capacidadCajaCarga;
     }
 
     public Integer getNumeroPasajeros() {
@@ -34,13 +34,6 @@ public abstract class VehiculoConfort extends Vehiculo {
     }
     public void setNumeroPuertas(Integer numeroPuertas) {
         this.numeroPuertas = numeroPuertas;
-    }
-
-    public Float getCapacidadMaletero() {
-        return capacidadMaletero;
-    }
-    public void setCapacidadMaletero(Float capacidadMaletero) {
-        this.capacidadMaletero = capacidadMaletero;
     }
 
     public Boolean getAireAcondicionado() {
@@ -71,8 +64,17 @@ public abstract class VehiculoConfort extends Vehiculo {
         this.abs = abs;
     }
 
-    @Override
-    public String toString() {
-        return "VehiculoConfort [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero=" + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa + ", numeroBolsasAire=" + numeroBolsasAire + ", abs=" + abs + ", getIdVehiculo()=" + getIdVehiculo() + ", getMarca()=" + getMarca() + ", getModelo()=" + getModelo() + ", getCambios()=" + getCambios() + ", getVelocidadMaxima()=" + getVelocidadMaxima() + ", getCilindraje()=" + getCilindraje() + ", getFoto()=" + getFoto() + ", getTransmision()=" + getTransmision() + ", getEstado()=" + getEstado() + ", getCombustible()=" + getCombustible() + "]";
+    public Boolean getTraccion4x4() {
+        return traccion4x4;
+    }
+    public void setTraccion4x4(Boolean traccion4x4) {
+        this.traccion4x4 = traccion4x4;
+    }
+
+    public Float getCapacidadCajaCarga() {
+        return capacidadCajaCarga;
+    }
+    public void setCapacidadCajaCarga(Float capacidadCajaCarga) {
+        this.capacidadCajaCarga = capacidadCajaCarga;
     }
 }
