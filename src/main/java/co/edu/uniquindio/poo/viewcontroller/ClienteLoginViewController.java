@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.controller;
+package co.edu.uniquindio.poo.viewcontroller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
