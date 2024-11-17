@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.model.Administrador;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.Persona;
 import javafx.event.ActionEvent;
@@ -90,7 +91,20 @@ public class InicioViewController {
                     Parent root = loader.load();
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
-                    stage.setTitle("Gestion Empleados");
+                    stage.setTitle("Gestiones del Empleado");
+                    stage.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("Error al cargar la vista: " + e.getMessage());
+                }
+            }
+            if (persona instanceof Cliente && persona.getContraseña().equals(contraseñaIngresada)) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/ClienteView.fxml"));
+                    Parent root = loader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("Gestiones del Cliente");
                     stage.show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -119,10 +133,12 @@ public class InicioViewController {
         assert txtCorreoElectronico != null : "fx:id=\"txtCorreoElectronico\" was not injected: check your FXML file 'InicioView.fxml'.";
         assert txtContrasenia != null : "fx:id=\"txtContrasenia\" was not injected: check your FXML file 'InicioView.fxml'.";
 
-        // Configuración de los ítems del menú
+    /**
+     *     // Configuración de los ítems del menú
         administradorMenuItem.setOnAction(this::handleSeleccionarAdministrador);
         empleadoMenuItem.setOnAction(this::handleSeleccionarEmpleado);
         clienteMenuItem.setOnAction(this::handleSeleccionarCliente);
+     */
 
     }
 
