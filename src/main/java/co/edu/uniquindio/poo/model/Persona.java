@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.model;
 import java.time.LocalDate;
 
 public abstract class Persona {
+
     private String nombre;
     private String cedula;
     private String correo;
@@ -13,8 +14,7 @@ public abstract class Persona {
     private String preguntaSeguridad;
     private String fraseSeguridad;
 
-    public Persona(String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento,
-            String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad) {
+    public Persona(String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento, String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.correo = correo;
@@ -29,7 +29,6 @@ public abstract class Persona {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -37,7 +36,6 @@ public abstract class Persona {
     public String getCedula() {
         return cedula;
     }
-
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
@@ -45,7 +43,6 @@ public abstract class Persona {
     public String getCorreo() {
         return correo;
     }
-
     public void setCorreo(String correo) {
         this.correo = correo;
     }
@@ -53,7 +50,6 @@ public abstract class Persona {
     public String getTelefono() {
         return telefono;
     }
-
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
@@ -61,7 +57,6 @@ public abstract class Persona {
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
-
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
@@ -69,7 +64,6 @@ public abstract class Persona {
     public String getUsuario() {
         return usuario;
     }
-
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
@@ -77,7 +71,6 @@ public abstract class Persona {
     public String getContraseña() {
         return contraseña;
     }
-
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
@@ -85,7 +78,6 @@ public abstract class Persona {
     public String getPreguntaSeguridad() {
         return preguntaSeguridad;
     }
-
     public void setPreguntaSeguridad(String preguntaSeguridad) {
         this.preguntaSeguridad = preguntaSeguridad;
     }
@@ -93,7 +85,6 @@ public abstract class Persona {
     public String getFraseSeguridad() {
         return fraseSeguridad;
     }
-
     public void setFraseSeguridad(String fraseSeguridad) {
         this.fraseSeguridad = fraseSeguridad;
     }
@@ -122,5 +113,4 @@ public abstract class Persona {
             return false;
         return true;
     }
-
 }

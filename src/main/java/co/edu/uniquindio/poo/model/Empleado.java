@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class Empleado extends Persona {
+
     private String idEmpleado;
     private LinkedList<Transaccion> listatransacciones;
     private LinkedList<Vehiculo> listavehiculos;
@@ -22,7 +23,6 @@ public class Empleado extends Persona {
     public LinkedList<Cliente> getListaclientes() {
         return listaclientes;
     }
-
     public void setListaclientes(LinkedList<Cliente> listaclientes) {
         this.listaclientes = listaclientes;
     }
@@ -30,14 +30,27 @@ public class Empleado extends Persona {
     public String getIdEmpleado() {
         return idEmpleado;
     }
-
     public void setIdEmpleado(String idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
 
+    public LinkedList<Transaccion> getListatransacciones() {
+        return listatransacciones;
+    }
+    public void setListatransacciones(LinkedList<Transaccion> listatransacciones) {
+        this.listatransacciones = listatransacciones;
+    }
+
+    public LinkedList<Vehiculo> getListavehiculos() {
+        return listavehiculos;
+    }
+    public void setListavehiculos(LinkedList<Vehiculo> listavehiculos) {
+        this.listavehiculos = listavehiculos;
+    }
+
     /**
      * Agrega una transacción si esta no existe
-     * 
+     *
      * @param transaccion
      * @return mensaje indicando si fue añadida o ya existe
      * @throws IllegalArgumentException
@@ -58,7 +71,7 @@ public class Empleado extends Persona {
 
     /**
      * Busca una transaccion mediante su id en la lista de transacciones
-     * 
+     *
      * @param id
      * @return la transaccion si es encontrada o null en caso contrario
      */
@@ -69,13 +82,14 @@ public class Empleado extends Persona {
 
     /**
      * Elimina una transacción siempre y cuando esta exista en la lista
-     * 
+     *
      * @param transaccion
      * @return un mensaje indicando si fue eliminada o no existe
      * @throws IllegalArgumentException
      */
     public String EliminarTransaccion(Transaccion transaccion) throws IllegalArgumentException {
         String respuesta = "La transaccion se eliminó correctamente";
+
         if (transaccion == null) {
             throw new IllegalArgumentException("La transacción no puede ser nula");
         }
@@ -91,7 +105,7 @@ public class Empleado extends Persona {
     /**
      * Actualiza una transacción de la lista eliminandola y añadiendo la version
      * actualizada siempre y cuando esta exista
-     * 
+     *
      * @param transaccion
      * @param transaccionactualizada
      * @return un mensaje indicando si se puedo actualizar o no existe
@@ -112,25 +126,11 @@ public class Empleado extends Persona {
         return respuesta;
     }
 
-    public LinkedList<Transaccion> getListatransacciones() {
-        return listatransacciones;
-    }
 
-    public void setListatransacciones(LinkedList<Transaccion> listatransacciones) {
-        this.listatransacciones = listatransacciones;
-    }
-
-    public LinkedList<Vehiculo> getListavehiculos() {
-        return listavehiculos;
-    }
-
-    public void setListavehiculos(LinkedList<Vehiculo> listavehiculos) {
-        this.listavehiculos = listavehiculos;
-    }
 
     /**
      * Agrega un vehículo si este no existe
-     * 
+     *
      * @param vehiculo
      * @return mensaje indicando si fue añadido o ya existe
      * @throws IllegalArgumentException
@@ -151,7 +151,7 @@ public class Empleado extends Persona {
 
     /**
      * Busca un vehículo mediante su ID en la lista de vehículos
-     * 
+     *
      * @param idvehiculo
      * @return el vehículo si es encontrado o null en caso contrario
      */
@@ -164,7 +164,7 @@ public class Empleado extends Persona {
 
     /**
      * Elimina un vehículo siempre y cuando este exista en la lista
-     * 
+     *
      * @param vehiculo
      * @return un mensaje indicando si fue eliminado o no existe
      * @throws IllegalArgumentException
@@ -186,7 +186,7 @@ public class Empleado extends Persona {
     /**
      * Actualiza un vehículo de la lista eliminándolo y añadiendo la versión
      * actualizada siempre y cuando este exista
-     * 
+     *
      * @param vehiculo
      * @param vehiculoActualizado
      * @return un mensaje indicando si se pudo actualizar o no existe
@@ -210,7 +210,7 @@ public class Empleado extends Persona {
 
     /**
      * Agrega un cliente si este no existe
-     * 
+     *
      * @param cliente
      * @return mensaje indicando si fue añadido o ya existe
      * @throws IllegalArgumentException
@@ -231,7 +231,7 @@ public class Empleado extends Persona {
 
     /**
      * Busca un cliente mediante su cédula en la lista de clientes
-     * 
+     *
      * @param cedula
      * @return el cliente si es encontrado o null en caso contrario
      */
@@ -244,7 +244,7 @@ public class Empleado extends Persona {
 
     /**
      * Elimina un cliente siempre y cuando este exista en la lista
-     * 
+     *
      * @param cliente
      * @return un mensaje indicando si fue eliminado o no existe
      * @throws IllegalArgumentException
@@ -266,7 +266,7 @@ public class Empleado extends Persona {
     /**
      * Actualiza un cliente de la lista eliminándolo y añadiendo la versión
      * actualizada siempre y cuando este exista
-     * 
+     *
      * @param cliente
      * @param clienteActualizado
      * @return un mensaje indicando si se pudo actualizar o no existe
@@ -287,5 +287,4 @@ public class Empleado extends Persona {
         }
         return respuesta;
     }
-
 }

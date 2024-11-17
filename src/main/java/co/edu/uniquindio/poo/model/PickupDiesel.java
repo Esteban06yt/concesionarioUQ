@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
 public class PickupDiesel extends VehiculoDiesel {
+
     private Integer numeroPasajeros;
     private Integer numeroPuertas;
     private Boolean aireAcondicionado;
@@ -10,10 +11,8 @@ public class PickupDiesel extends VehiculoDiesel {
     private Boolean traccion4x4;
     private Float capacidadCajaCarga;
 
-    public PickupDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, Integer numeroPasajeros,
-            Integer numeroPuertas, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire,
-            Boolean abs, Boolean traccion4x4, Float capacidadCajaCarga) {
+    public PickupDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, Integer numeroPasajeros,
+            Integer numeroPuertas, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs, Boolean traccion4x4, Float capacidadCajaCarga) {
         super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
@@ -28,7 +27,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Integer getNumeroPasajeros() {
         return numeroPasajeros;
     }
-
     public void setNumeroPasajeros(Integer numeroPasajeros) {
         this.numeroPasajeros = numeroPasajeros;
     }
@@ -36,7 +34,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Integer getNumeroPuertas() {
         return numeroPuertas;
     }
-
     public void setNumeroPuertas(Integer numeroPuertas) {
         this.numeroPuertas = numeroPuertas;
     }
@@ -44,7 +41,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Boolean getAireAcondicionado() {
         return aireAcondicionado;
     }
-
     public void setAireAcondicionado(Boolean aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
@@ -52,7 +48,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Boolean getCamaraReversa() {
         return camaraReversa;
     }
-
     public void setCamaraReversa(Boolean camaraReversa) {
         this.camaraReversa = camaraReversa;
     }
@@ -60,7 +55,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Integer getNumeroBolsasAire() {
         return numeroBolsasAire;
     }
-
     public void setNumeroBolsasAire(Integer numeroBolsasAire) {
         this.numeroBolsasAire = numeroBolsasAire;
     }
@@ -68,7 +62,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Boolean getAbs() {
         return abs;
     }
-
     public void setAbs(Boolean abs) {
         this.abs = abs;
     }
@@ -76,7 +69,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Boolean getTraccion4x4() {
         return traccion4x4;
     }
-
     public void setTraccion4x4(Boolean traccion4x4) {
         this.traccion4x4 = traccion4x4;
     }
@@ -84,7 +76,6 @@ public class PickupDiesel extends VehiculoDiesel {
     public Float getCapacidadCajaCarga() {
         return capacidadCajaCarga;
     }
-
     public void setCapacidadCajaCarga(Float capacidadCajaCarga) {
         this.capacidadCajaCarga = capacidadCajaCarga;
     }

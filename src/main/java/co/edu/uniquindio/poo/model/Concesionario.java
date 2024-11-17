@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.model;
 import java.util.LinkedList;
 
 public class Concesionario {
+
     private String nombre;
     private LinkedList<Transaccion> listatransacciones;
     private LinkedList<Persona> listapersonas;
@@ -18,7 +19,6 @@ public class Concesionario {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -26,7 +26,6 @@ public class Concesionario {
     public LinkedList<Transaccion> getListatransacciones() {
         return listatransacciones;
     }
-
     public void setListatransacciones(LinkedList<Transaccion> listatransacciones) {
         this.listatransacciones = listatransacciones;
     }
@@ -34,7 +33,6 @@ public class Concesionario {
     public LinkedList<Persona> getListapersonas() {
         return listapersonas;
     }
-
     public void setListapersonas(LinkedList<Persona> listapersonas) {
         this.listapersonas = listapersonas;
     }
@@ -42,14 +40,13 @@ public class Concesionario {
     public LinkedList<Vehiculo> getListavehiculos() {
         return listavehiculos;
     }
-
     public void setListavehiculoss(LinkedList<Vehiculo> listavehiculos) {
         this.listavehiculos = listavehiculos;
     }
 
     /**
      * Agrega una transacción si esta no existe
-     * 
+     *
      * @param transaccion
      * @return mensaje indicando si fue añadida o ya existe
      * @throws IllegalArgumentException
@@ -70,7 +67,7 @@ public class Concesionario {
 
     /**
      * Busca una transaccion mediante su id en la lista de transacciones
-     * 
+     *
      * @param id
      * @return la transaccion si es encontrada o null en caso contrario
      */
@@ -81,7 +78,7 @@ public class Concesionario {
 
     /**
      * Elimina una transacción siempre y cuando esta exista en la lista
-     * 
+     *
      * @param transaccion
      * @return un mensaje indicando si fue eliminada o no existe
      * @throws IllegalArgumentException
@@ -103,7 +100,7 @@ public class Concesionario {
     /**
      * Actualiza una transacción de la lista eliminandola y añadiendo la version
      * actualizada siempre y cuando esta exista
-     * 
+     *
      * @param transaccion
      * @param transaccionactualizada
      * @return un mensaje indicando si se puedo actualizar o no existe
@@ -128,7 +125,7 @@ public class Concesionario {
 
     /**
      * Agrega una persona si esta no existe
-     * 
+     *
      * @param persona
      * @return mensaje indicando si fue añadida o ya existe
      * @throws IllegalArgumentException
@@ -149,7 +146,7 @@ public class Concesionario {
 
     /**
      * Busca una persona mediante su cédula en la lista de personas
-     * 
+     *
      * @param cedula
      * @return la persona si es encontrada o null en caso contrario
      */
@@ -162,7 +159,7 @@ public class Concesionario {
 
     /**
      * Elimina una persona siempre y cuando esta exista en la lista
-     * 
+     *
      * @param persona
      * @return un mensaje indicando si fue eliminada o no existe
      * @throws IllegalArgumentException
@@ -184,7 +181,7 @@ public class Concesionario {
     /**
      * Actualiza una persona de la lista eliminándola y añadiendo la versión
      * actualizada siempre y cuando esta exista
-     * 
+     *
      * @param persona
      * @param personaActualizada
      * @return un mensaje indicando si se pudo actualizar o no existe
@@ -208,7 +205,7 @@ public class Concesionario {
 
     /**
      * Agrega un vehículo si este no existe
-     * 
+     *
      * @param vehiculo
      * @return mensaje indicando si fue añadido o ya existe
      * @throws IllegalArgumentException
@@ -229,7 +226,7 @@ public class Concesionario {
 
     /**
      * Busca un vehículo mediante su ID en la lista de vehículos
-     * 
+     *
      * @param idvehiculo
      * @return el vehículo si es encontrado o null en caso contrario
      */
@@ -242,7 +239,7 @@ public class Concesionario {
 
     /**
      * Elimina un vehículo siempre y cuando este exista en la lista
-     * 
+     *
      * @param vehiculo
      * @return un mensaje indicando si fue eliminado o no existe
      * @throws IllegalArgumentException
@@ -264,7 +261,7 @@ public class Concesionario {
     /**
      * Actualiza un vehículo de la lista eliminándolo y añadiendo la versión
      * actualizada siempre y cuando este exista
-     * 
+     *
      * @param vehiculo
      * @param vehiculoActualizado
      * @return un mensaje indicando si se pudo actualizar o no existe
@@ -285,5 +282,4 @@ public class Concesionario {
         }
         return respuesta;
     }
-
 }

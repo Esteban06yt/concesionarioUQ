@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
 public class CamionElectrico extends VehiculoElectrico {
+
     private Float capacidadCarga;
     private Boolean aireAcondicionado;
     private Boolean frenosAire;
@@ -8,12 +9,9 @@ public class CamionElectrico extends VehiculoElectrico {
     private Integer numeroEjes;
     private String tipoCamion;
 
-    public CamionElectrico(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, String combustible, Float autonomia,
-            Float tiempoCarga, Float capacidadCarga, Boolean aireAcondicionado, Boolean frenosAire, Boolean abs,
-            Integer numeroEjes, String tipoCamion) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible,
-                autonomia, tiempoCarga);
+    public CamionElectrico(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, Float autonomia,
+            Float tiempoCarga, Float capacidadCarga, Boolean aireAcondicionado, Boolean frenosAire, Boolean abs, Integer numeroEjes, String tipoCamion) {
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, autonomia, tiempoCarga);
         this.capacidadCarga = capacidadCarga;
         this.aireAcondicionado = aireAcondicionado;
         this.frenosAire = frenosAire;
@@ -25,7 +23,6 @@ public class CamionElectrico extends VehiculoElectrico {
     public Float getCapacidadCarga() {
         return capacidadCarga;
     }
-
     public void setCapacidadCarga(Float capacidadCarga) {
         this.capacidadCarga = capacidadCarga;
     }
@@ -33,7 +30,6 @@ public class CamionElectrico extends VehiculoElectrico {
     public Boolean getAireAcondicionado() {
         return aireAcondicionado;
     }
-
     public void setAireAcondicionado(Boolean aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
@@ -41,7 +37,6 @@ public class CamionElectrico extends VehiculoElectrico {
     public Boolean getFrenosAire() {
         return frenosAire;
     }
-
     public void setFrenosAire(Boolean frenosAire) {
         this.frenosAire = frenosAire;
     }
@@ -49,7 +44,6 @@ public class CamionElectrico extends VehiculoElectrico {
     public Boolean getAbs() {
         return abs;
     }
-
     public void setAbs(Boolean abs) {
         this.abs = abs;
     }
@@ -57,7 +51,6 @@ public class CamionElectrico extends VehiculoElectrico {
     public Integer getNumeroEjes() {
         return numeroEjes;
     }
-
     public void setNumeroEjes(Integer numeroEjes) {
         this.numeroEjes = numeroEjes;
     }
@@ -65,7 +58,6 @@ public class CamionElectrico extends VehiculoElectrico {
     public String getTipoCamion() {
         return tipoCamion;
     }
-
     public void setTipoCamion(String tipoCamion) {
         this.tipoCamion = tipoCamion;
     }

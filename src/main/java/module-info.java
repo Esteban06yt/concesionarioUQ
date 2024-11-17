@@ -9,4 +9,3 @@ module co.edu.uniquindio.poo {
     exports co.edu.uniquindio.poo.model;
     opens co.edu.uniquindio.poo.controller to javafx.fxml;
 }
-

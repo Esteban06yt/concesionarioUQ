@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.model;
 import java.util.LinkedList;
 
 public abstract class Vehiculo {
+
     private String idVehiculo;
     private String marca;
     private String modelo;
@@ -13,8 +14,7 @@ public abstract class Vehiculo {
     private Estado estado;
     private LinkedList<Transaccion> listatransacciones;
 
-    public Vehiculo(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado) {
+    public Vehiculo(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado) {
         this.idVehiculo = idVehiculo;
         this.marca = marca;
         this.modelo = modelo;
@@ -29,7 +29,6 @@ public abstract class Vehiculo {
     public String getIdVehiculo() {
         return idVehiculo;
     }
-
     public void setIdVehiculo(String idVehiculo) {
         this.idVehiculo = idVehiculo;
     }
@@ -37,7 +36,6 @@ public abstract class Vehiculo {
     public String getMarca() {
         return marca;
     }
-
     public void setMarca(String marca) {
         this.marca = marca;
     }
@@ -45,7 +43,6 @@ public abstract class Vehiculo {
     public String getModelo() {
         return modelo;
     }
-
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
@@ -53,7 +50,6 @@ public abstract class Vehiculo {
     public Integer getCambios() {
         return cambios;
     }
-
     public void setCambios(Integer cambios) {
         this.cambios = cambios;
     }
@@ -61,7 +57,6 @@ public abstract class Vehiculo {
     public Float getVelocidadMaxima() {
         return velocidadMaxima;
     }
-
     public void setVelocidadMaxima(Float velocidadMaxima) {
         this.velocidadMaxima = velocidadMaxima;
     }
@@ -69,7 +64,6 @@ public abstract class Vehiculo {
     public Float getCilindraje() {
         return cilindraje;
     }
-
     public void setCilindraje(Float cilindraje) {
         this.cilindraje = cilindraje;
     }
@@ -77,7 +71,6 @@ public abstract class Vehiculo {
     public Transmision getTransmision() {
         return transmision;
     }
-
     public void setTransmision(Transmision transmision) {
         this.transmision = transmision;
     }
@@ -85,7 +78,6 @@ public abstract class Vehiculo {
     public Estado getEstado() {
         return estado;
     }
-
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
@@ -93,14 +85,13 @@ public abstract class Vehiculo {
     public LinkedList<Transaccion> getListatransacciones() {
         return listatransacciones;
     }
-
     public void setListatransacciones(LinkedList<Transaccion> listatransacciones) {
         this.listatransacciones = listatransacciones;
     }
 
     /**
      * Agrega una transacción si esta no existe
-     * 
+     *
      * @param transaccion
      * @return mensaje indicando si fue añadida o ya existe
      * @throws IllegalArgumentException
@@ -121,7 +112,7 @@ public abstract class Vehiculo {
 
     /**
      * Busca una transaccion mediante su id en la lista de transacciones
-     * 
+     *
      * @param id
      * @return la transaccion si es encontrada o null en caso contrario
      */
@@ -132,7 +123,7 @@ public abstract class Vehiculo {
 
     /**
      * Elimina una transacción siempre y cuando esta exista en la lista
-     * 
+     *
      * @param transaccion
      * @return un mensaje indicando si fue eliminada o no existe
      * @throws IllegalArgumentException
@@ -154,7 +145,7 @@ public abstract class Vehiculo {
     /**
      * Actualiza una transacción de la lista eliminandola y añadiendo la version
      * actualizada siempre y cuando esta exista
-     * 
+     *
      * @param transaccion
      * @param transaccionactualizada
      * @return un mensaje indicando si se puedo actualizar o no existe
@@ -199,5 +190,4 @@ public abstract class Vehiculo {
             return false;
         return true;
     }
-
 }

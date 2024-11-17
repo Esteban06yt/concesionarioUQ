@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
-public class VehiculoConfortElectrico extends VehiculoElectrico {
+public abstract class VehiculoConfortElectrico extends VehiculoElectrico {
+
     private Integer numeroPasajeros;
     private Integer numeroPuertas;
     private Float capacidadMaletero;
@@ -9,12 +10,9 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     private Integer numeroBolsasAire;
     private Boolean abs;
 
-    public VehiculoConfortElectrico(String idVehiculo, String marca, String modelo, Integer cambios,
-            Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado, String combustible,
-            Float autonomia, Float tiempoCarga, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero,
-            Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible,
-                autonomia, tiempoCarga);
+    public VehiculoConfortElectrico(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima, Float cilindraje, Transmision transmision, Estado estado,
+            Float autonomia, Float tiempoCarga, Integer numeroPasajeros, Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire, Boolean abs) {
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, autonomia, tiempoCarga);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;
@@ -27,7 +25,6 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     public Integer getNumeroPasajeros() {
         return numeroPasajeros;
     }
-
     public void setNumeroPasajeros(Integer numeroPasajeros) {
         this.numeroPasajeros = numeroPasajeros;
     }
@@ -35,7 +32,6 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     public Integer getNumeroPuertas() {
         return numeroPuertas;
     }
-
     public void setNumeroPuertas(Integer numeroPuertas) {
         this.numeroPuertas = numeroPuertas;
     }
@@ -43,7 +39,6 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     public Float getCapacidadMaletero() {
         return capacidadMaletero;
     }
-
     public void setCapacidadMaletero(Float capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
     }
@@ -51,7 +46,6 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     public Boolean getAireAcondicionado() {
         return aireAcondicionado;
     }
-
     public void setAireAcondicionado(Boolean aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
@@ -59,7 +53,6 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     public Boolean getCamaraReversa() {
         return camaraReversa;
     }
-
     public void setCamaraReversa(Boolean camaraReversa) {
         this.camaraReversa = camaraReversa;
     }
@@ -67,7 +60,6 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     public Integer getNumeroBolsasAire() {
         return numeroBolsasAire;
     }
-
     public void setNumeroBolsasAire(Integer numeroBolsasAire) {
         this.numeroBolsasAire = numeroBolsasAire;
     }
@@ -75,7 +67,6 @@ public class VehiculoConfortElectrico extends VehiculoElectrico {
     public Boolean getAbs() {
         return abs;
     }
-
     public void setAbs(Boolean abs) {
         this.abs = abs;
     }

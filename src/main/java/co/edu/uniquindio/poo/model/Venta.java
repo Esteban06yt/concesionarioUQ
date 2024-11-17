@@ -7,8 +7,7 @@ public class Venta extends Transaccion {
     private String metodopago;
     private Boolean garantia;
 
-    public Venta(String idtransaccion, LocalDate fecha, Float preciototal, Cliente cliente, Empleado empleado,
-            Vehiculo vehiculo, String metodopago, Boolean garantia) {
+    public Venta(String idtransaccion, LocalDate fecha, Float preciototal, Cliente cliente, Empleado empleado, Vehiculo vehiculo, String metodopago, Boolean garantia) {
         super(idtransaccion, fecha, preciototal, cliente, empleado, vehiculo);
         this.metodopago = metodopago;
         this.garantia = garantia;
@@ -17,7 +16,6 @@ public class Venta extends Transaccion {
     public String getMetodopago() {
         return metodopago;
     }
-
     public void setMetodopago(String metodopago) {
         this.metodopago = metodopago;
     }
@@ -25,9 +23,7 @@ public class Venta extends Transaccion {
     public Boolean getGarantia() {
         return garantia;
     }
-
     public void setGarantia(Boolean garantia) {
         this.garantia = garantia;
     }
-
 }

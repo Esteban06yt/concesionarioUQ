@@ -4,14 +4,12 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class Administrador extends Persona {
+
     private String idAdministrador;
     private LinkedList<Empleado> listaempleados;
 
-    public Administrador(String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento,
-            String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad,
-            String idAdministrador) {
-        super(nombre, cedula, correo, telefono, fechaNacimiento, usuario, contraseña, preguntaSeguridad,
-                fraseSeguridad);
+    public Administrador(String nombre, String cedula, String correo, String telefono, LocalDate fechaNacimiento, String usuario, String contraseña, String preguntaSeguridad, String fraseSeguridad, String idAdministrador) {
+        super(nombre, cedula, correo, telefono, fechaNacimiento, usuario, contraseña, preguntaSeguridad, fraseSeguridad);
         this.idAdministrador = idAdministrador;
         listaempleados = new LinkedList<>();
     }
@@ -19,7 +17,6 @@ public class Administrador extends Persona {
     public String getIdAdministrador() {
         return idAdministrador;
     }
-
     public void setIdAdministrador(String idAdministrador) {
         this.idAdministrador = idAdministrador;
     }
@@ -27,14 +24,13 @@ public class Administrador extends Persona {
     public LinkedList<Empleado> getListaempleados() {
         return listaempleados;
     }
-
     public void setListaempleados(LinkedList<Empleado> listaempleados) {
         this.listaempleados = listaempleados;
     }
 
     /**
      * Agrega un empleado si este no existe
-     * 
+     *
      * @param empleado
      * @return mensaje indicando si fue añadido o ya existe
      * @throws IllegalArgumentException
@@ -55,7 +51,7 @@ public class Administrador extends Persona {
 
     /**
      * Busca un empleado mediante su cédula en la lista de empleados
-     * 
+     *
      * @param cedula
      * @return el empleado si es encontrado o null en caso contrario
      */
@@ -68,7 +64,7 @@ public class Administrador extends Persona {
 
     /**
      * Elimina un empleado siempre y cuando este exista en la lista
-     * 
+     *
      * @param empleado
      * @return un mensaje indicando si fue eliminado o no existe
      * @throws IllegalArgumentException
@@ -90,7 +86,7 @@ public class Administrador extends Persona {
     /**
      * Actualiza un empleado de la lista eliminándolo y añadiendo la versión
      * actualizada siempre y cuando este exista
-     * 
+     *
      * @param empleado
      * @param empleadoActualizado
      * @return un mensaje indicando si se pudo actualizar o no existe
@@ -111,5 +107,4 @@ public class Administrador extends Persona {
         }
         return respuesta;
     }
-
 }
