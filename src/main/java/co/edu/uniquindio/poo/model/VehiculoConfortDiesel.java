@@ -10,10 +10,10 @@ public abstract class VehiculoConfortDiesel extends VehiculoDiesel {
     private Boolean abs;
 
     public VehiculoConfortDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, String combustible, Integer numeroPasajeros,
+            Float cilindraje, Transmision transmision, Estado estado, Integer numeroPasajeros,
             Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa,
             Integer numeroBolsasAire, Boolean abs) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible);
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;

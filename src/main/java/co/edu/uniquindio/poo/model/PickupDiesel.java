@@ -11,10 +11,10 @@ public class PickupDiesel extends VehiculoDiesel {
     private Float capacidadCajaCarga;
 
     public PickupDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, String combustible, Integer numeroPasajeros,
+            Float cilindraje, Transmision transmision, Estado estado, Integer numeroPasajeros,
             Integer numeroPuertas, Boolean aireAcondicionado, Boolean camaraReversa, Integer numeroBolsasAire,
             Boolean abs, Boolean traccion4x4, Float capacidadCajaCarga) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible);
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.aireAcondicionado = aireAcondicionado;

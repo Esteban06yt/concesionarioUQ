@@ -5,10 +5,10 @@ public class BusDiesel extends VehiculoConfortDiesel {
     private Integer numeroSalidasEmergencia;
 
     public BusDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, String combustible, Integer numeroPasajeros,
+            Float cilindraje, Transmision transmision, Estado estado, Integer numeroPasajeros,
             Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa,
             Integer numeroBolsasAire, Boolean abs, Integer numeroEjes, Integer numeroSalidasEmergencia) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible,
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado,
                 numeroPasajeros, numeroPuertas, capacidadMaletero, aireAcondicionado, camaraReversa, numeroBolsasAire,
                 abs);
         this.numeroEjes = numeroEjes;

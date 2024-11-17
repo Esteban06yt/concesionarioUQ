@@ -9,9 +9,9 @@ public class CamionDiesel extends VehiculoDiesel {
     private String tipoCamion;
 
     public CamionDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, String combustible, Float capacidadCarga,
+            Float cilindraje, Transmision transmision, Estado estado, Float capacidadCarga,
             Boolean aireAcondicionado, Boolean frenosAire, Boolean abs, Integer numeroEjes, String tipoCamion) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible);
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado);
         this.capacidadCarga = capacidadCarga;
         this.aireAcondicionado = aireAcondicionado;
         this.frenosAire = frenosAire;

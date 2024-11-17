@@ -8,11 +8,11 @@ public class CamionetaDiesel extends VehiculoConfortDiesel {
     private Boolean traccion4x4;
 
     public CamionetaDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, String combustible, Integer numeroPasajeros,
+            Float cilindraje, Transmision transmision, Estado estado, Integer numeroPasajeros,
             Integer numeroPuertas, Float capacidadMaletero, Boolean aireAcondicionado, Boolean camaraReversa,
             Integer numeroBolsasAire, Boolean abs, Boolean velocidadCrucero, Boolean sensoresColision,
             Boolean sensorTraficoCruzado, Boolean asistentePermaneciaCarril, Boolean traccion4x4) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible,
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado,
                 numeroPasajeros, numeroPuertas, capacidadMaletero, aireAcondicionado, camaraReversa, numeroBolsasAire,
                 abs);
         this.velocidadCrucero = velocidadCrucero;

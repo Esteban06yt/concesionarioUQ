@@ -8,9 +8,9 @@ public class DeporivoDiesel extends VehiculoDiesel {
     private Float tiempoCienKmh;
 
     public DeporivoDiesel(String idVehiculo, String marca, String modelo, Integer cambios, Float velocidadMaxima,
-            Float cilindraje, Transmision transmision, Estado estado, String combustible, Integer numeroPasajeros,
+            Float cilindraje, Transmision transmision, Estado estado, Integer numeroPasajeros,
             Integer numeroPuertas, Integer numeroBolsasAire, Integer caballosFuerza, Float tiempoCienKmh) {
-        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado, combustible);
+        super(idVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, transmision, estado);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.numeroBolsasAire = numeroBolsasAire;
