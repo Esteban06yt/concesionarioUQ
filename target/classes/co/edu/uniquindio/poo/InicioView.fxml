@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.controller.InicioViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewcontroller.InicioViewController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="686.0" layoutX="-5.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="779.0">
          <fill>
@@ -60,8 +60,11 @@
       </Label>
       <MenuButton fx:id="menuBtnYoSoy" layoutX="203.0" layoutY="167.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="252.0" text="MenuButton">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+           <items>
+          <MenuItem fx:id="administradorMenuItem" text="Administrador" />
+          <MenuItem fx:id="empleadoMenuItem" text="Empleado" />
+          <MenuItem fx:id="clienteMenuItem" text="Cliente" />
+        </items>
         </items>
       </MenuButton>
       <Hyperlink fx:id="hyperLinkRecuperarContraseña" layoutX="127.0" layoutY="466.0" onAction="#recuperarContraseñaAction" text="¿Olvidaste tu contraseña?" />
