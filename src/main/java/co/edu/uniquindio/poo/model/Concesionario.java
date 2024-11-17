@@ -91,6 +91,9 @@ public class Concesionario {
         Transaccion transaccionaux = BuscarTransaccion(transaccion.getIdtransaccion());
         if (transaccionaux != null) {
             listatransacciones.remove(transaccion);
+            transaccion.getCliente().EliminarTransaccion(transaccion);
+            transaccion.getEmpleado().EliminarTransaccion(transaccion);
+            transaccion.getVehiculo().EliminarTransaccion(transaccion);
         } else {
             respuesta = "Esta transaccion no existe";
         }
@@ -117,6 +120,9 @@ public class Concesionario {
         if (transaccionaux != null) {
             listatransacciones.remove(transaccion);
             listatransacciones.add(transaccionactualizada);
+            transaccion.getCliente().ActualizarTransaccion(transaccionaux, transaccionactualizada);
+            transaccion.getVehiculo().ActualizarTransaccion(transaccionaux, transaccionactualizada);
+            transaccion.getEmpleado().ActualizarTransaccion(transaccionaux, transaccionactualizada);
         } else {
             respuesta = "Esta transaccion no existe";
         }
