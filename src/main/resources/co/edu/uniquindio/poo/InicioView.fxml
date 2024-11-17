@@ -1,56 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="353.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.controller.InicioViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.controller.InicioViewController">
    <children>
-      <Label layoutX="147.0" layoutY="25.0" prefHeight="31.0" prefWidth="142.0" text="Tu carro UQ">
-         <font>
-            <Font name="Book Antiqua" size="24.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="47.0" fitWidth="40.0" layoutX="27.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="686.0" layoutX="-5.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="779.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.18446601941747576">
+               <stops>
+                  <Stop color="#91b1b5" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="111.0" fitWidth="385.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../Imágenes/Screenshots/LogoUq.png" />
+            <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20120357.png" />
          </image>
       </ImageView>
-      <SplitPane dividerPositions="0.30916030534351147" layoutX="14.0" layoutY="67.0" orientation="VERTICAL" prefHeight="271.0" prefWidth="410.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#82b4ff" height="284.0" layoutX="81.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" width="617.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3efff" height="173.0" layoutX="112.0" layoutY="325.0" stroke="BLACK" strokeType="INSIDE" width="568.0" />
+      <Label layoutX="123.0" layoutY="341.0" text="Correo Electronico: ">
+         <font>
+            <Font name="Castellar" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCorreoElectronico" layoutX="121.0" layoutY="370.0" prefHeight="31.0" prefWidth="538.0" />
+      <Label layoutX="123.0" layoutY="416.0" text="contraseña:">
+         <font>
+            <Font name="Castellar" size="15.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtContrasenia" layoutX="121.0" layoutY="435.0" prefHeight="31.0" prefWidth="538.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ddeeff" height="44.0" layoutX="275.0" layoutY="514.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
+      <Label layoutX="331.0" layoutY="527.0" text="Iniciar Sesion">
+         <font>
+            <Font name="Castellar" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnIniciarSesion" layoutX="279.0" layoutY="514.0" mnemonicParsing="false" onAction="#iniciarSesion" opacity="0.0" prefHeight="44.0" prefWidth="212.0" text="IniciarSesion" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="553.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20123242.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#82b4ff" height="152.0" layoutX="81.0" layoutY="137.0" stroke="BLACK" strokeType="INSIDE" width="617.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3efff" height="111.0" layoutX="112.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="568.0" />
+      <Label layoutX="123.0" layoutY="173.0" text="Yo soy:">
+         <font>
+            <Font name="Castellar" size="15.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="menuBtnYoSoy" layoutX="203.0" layoutY="167.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="252.0" text="MenuButton">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="185.0" prefWidth="361.0">
-               <children>
-                <AnchorPane layoutX="1.0" layoutY="5.0" minHeight="0.0" minWidth="0.0" prefHeight="175.0" prefWidth="312.0">
-                     <children>
-                        <Label layoutX="54.0" layoutY="11.0" text="Yo soy:">
-                           <font>
-                              <Font name="Book Antiqua" size="18.0" />
-                           </font>
-                        </Label>
-                        <MenuButton fx:id="menuBtn" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="168.0" text="MenuButton">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
-                          </items>
-                        </MenuButton>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <Label layoutX="14.0" layoutY="14.0" text="Correo: " />
-                  <Label layoutX="14.0" layoutY="56.0" text="Contraseña: " />
-                  <TextField fx:id="txtCorreo" layoutX="97.0" layoutY="9.0" prefHeight="31.0" prefWidth="283.0" />
-                  <PasswordField fx:id="txtContraseña" layoutX="97.0" layoutY="51.0" prefHeight="31.0" prefWidth="283.0" />
-                  <Button fx:id="btnIniciarSesion" layoutX="147.0" layoutY="97.0" mnemonicParsing="false" onAction="#iniciarSesionAction" prefHeight="31.0" prefWidth="115.0" text="Iniciar Sesión" />
-                  <Label layoutX="1.0" layoutY="153.0" text="¿Tienes problemas para iniciar sesión?" />
-                  <Hyperlink fx:id="hyperLinkRecuperarContraseña" layoutX="255.0" layoutY="149.0" onAction="#recuperarContraseñaAction" text="Olvidé mi contraseña" />
-               </children>
-            </AnchorPane>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
-      </SplitPane>
+      </MenuButton>
+      <Hyperlink fx:id="hyperLinkRecuperarContraseña" layoutX="127.0" layoutY="466.0" onAction="#recuperarContraseñaAction" text="¿Olvidaste tu contraseña?" />
    </children>
 </AnchorPane>

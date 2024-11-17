@@ -1,40 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.controller.RecuperarContraseñaViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.controller.RecuperarContraseñaViewController">
    <children>
-      <Label layoutX="157.0" layoutY="14.0" text="Recuperación de contraseña">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="817.0" stroke="BLACK" strokeType="INSIDE" width="701.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.9514563106796117">
+               <stops>
+                  <Stop color="#b0e8ff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="66.0" fitWidth="200.0" layoutX="251.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20120357.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="85.0" fitWidth="192.0" layoutX="474.0" layoutY="10.0">
+         <image>
+            <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20123242.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7abfff" height="340.0" layoutX="89.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="530.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="73.0" layoutX="117.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
+      <Label layoutX="126.0" layoutY="133.0" prefHeight="35.0" prefWidth="478.0" text="En Tu Carro UQ velamos por la seguridad de los datos, por favor " />
+      <Label layoutX="126.0" layoutY="151.0" prefHeight="35.0" prefWidth="478.0" text="ingresa tu correo y responde la pregunta de seguridad." />
+      <Label layoutX="124.0" layoutY="175.0" prefHeight="35.0" prefWidth="478.0" text="¡Esto nos ayudará a verificar que eres tú! " />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.0" layoutX="115.0" layoutY="221.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
+      <Label layoutX="124.0" layoutY="234.0" text="Correo Electronico: ">
          <font>
-            <Font name="Book Antiqua" size="23.0" />
+            <Font name="Castellar" size="11.0" />
          </font>
       </Label>
-      <SplitPane dividerPositions="0.749003984063745" layoutX="41.0" layoutY="52.0" orientation="VERTICAL" prefHeight="253.0" prefWidth="516.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <Label layoutX="7.0" layoutY="4.0" text="Ingrese los siquientes datos para recuperar su contraseña:  " />
-                  <Label layoutX="7.0" layoutY="41.0" text="Correo electrónico: " />
-                  <TextField fx:id="txtCorreo" layoutX="138.0" layoutY="36.0" prefHeight="31.0" prefWidth="270.0" />
-                  <Label layoutX="7.0" layoutY="74.0" text="Por favor responda la pregunta de seguridad:" />
-                  <Label fx:id="labelPreguntaSeguridad" layoutX="7.0" layoutY="103.0" prefHeight="21.0" prefWidth="497.0" text="Pregunta de seguridad" />
-                  <TextField fx:id="txtFraseSeguridad" layoutX="36.0" layoutY="132.0" prefHeight="31.0" prefWidth="440.0" />
-                  <Button fx:id="btnConfirmarCorreo" layoutX="424.0" layoutY="40.0" mnemonicParsing="false" onAction="#confirmarCorreo" text="Confirmar">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Button>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="68.0" prefWidth="520.0">
-               <children>
-                  <Button fx:id="btnVerificarCorreoYFrase" layoutX="146.0" layoutY="14.0" mnemonicParsing="false" onAction="#verificarCorreoYFrase" prefHeight="31.0" prefWidth="223.0" text="Verificar" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+      <TextField fx:id="txtCorreoElectronico" layoutX="124.0" layoutY="255.0" prefHeight="31.0" prefWidth="365.0" />
+      <Button fx:id="btnConfirmarCorreo" layoutX="497.0" layoutY="255.0" mnemonicParsing="false" onAction="#confirmarCorreo" prefHeight="31.0" prefWidth="86.0" text="Confirmar" />
+      <TextField fx:id="textFraseSeguridad" layoutX="125.0" layoutY="345.0" prefHeight="31.0" prefWidth="458.0" />
+      <Label layoutX="124.0" layoutY="317.0">
+         <font>
+            <Font name="Castellar" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPreguntaSeguridad" layoutX="126.0" layoutY="309.0" prefHeight="35.0" prefWidth="478.0" text="Aqui se cargará la pregunta de seguridad">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7abfff" height="308.0" layoutX="86.0" layoutY="477.0" stroke="BLACK" strokeType="INSIDE" width="530.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="267.0" layoutX="112.0" layoutY="495.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
+      <Label layoutX="126.0" layoutY="513.0" text="Configura tu nueVA CONTRASEÑA">
+         <font>
+            <Font name="Castellar" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="552.0" text="Nueva Contraseña:">
+         <font>
+            <Font name="Castellar" size="11.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtNuevaContraseña" layoutX="126.0" layoutY="566.0" prefHeight="31.0" prefWidth="443.0" />
+      <PasswordField fx:id="txtConfirmarNuevaContraseña" layoutX="126.0" layoutY="654.0" prefHeight="31.0" prefWidth="443.0" />
+      <Label layoutX="124.0" layoutY="631.0" text="confirma tu Nueva Contraseña:">
+         <font>
+            <Font name="Castellar" size="11.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a8d5ff" height="35.0" layoutX="279.0" layoutY="706.0" stroke="BLACK" strokeType="INSIDE" width="167.0" />
+      <Label layoutX="320.0" layoutY="714.0" text="Guardar">
+         <font>
+            <Font name="Castellar" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnGuardarContraseña" layoutX="274.0" layoutY="708.0" mnemonicParsing="false" onAction="#guardarContraseña" opacity="0.0" prefHeight="31.0" prefWidth="176.0" text="Button" />
    </children>
 </AnchorPane>
