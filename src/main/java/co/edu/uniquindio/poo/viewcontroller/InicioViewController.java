@@ -66,10 +66,13 @@ public class InicioViewController {
             Persona persona = personaEncontrada.get();
             if (persona instanceof Administrador && tipopersona.equals("Administrador")) {
                 app.openAdministrador();
+                Limpiarseleccion();
             }else if (persona instanceof Empleado && tipopersona.equals("Empleado")) {
                 app.openEmpleado();
+                Limpiarseleccion();
             }else if (persona instanceof Cliente && tipopersona.equals("Cliente")) {
                 app.openCliente();
+                Limpiarseleccion();
             }else{
                 // Si no se encuentra la persona, muestra un mensaje de alerta
                 mostrarAlerta(AlertType.ERROR, "Usuario no encontrado", "Verifique los datos ingresados.");
@@ -134,6 +137,11 @@ public class InicioViewController {
             return false;
         }
         return true;
+    }
+    public void Limpiarseleccion(){
+        comboboxyosoy.setValue("");
+        txtCorreoElectronico.clear();
+        txtContrasenia.clear();
     }
 }
 
