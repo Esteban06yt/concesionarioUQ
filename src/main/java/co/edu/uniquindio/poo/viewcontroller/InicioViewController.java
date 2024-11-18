@@ -1,31 +1,35 @@
 package co.edu.uniquindio.poo.viewcontroller;
 
 import java.net.URL;
-import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.poo.Controller.Personacontroller;
+import co.edu.uniquindio.poo.application.App;
 import co.edu.uniquindio.poo.model.Administrador;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.Persona;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class InicioViewController {
 
+    private LinkedList<Persona> listaPersonas = new LinkedList<>();
+    private Personacontroller personacontroller;
+    ObservableList<String> tipopersona = FXCollections.observableArrayList("","Administrador", "Empleado", "Cliente");
+    App app;
+    
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
 
@@ -35,8 +39,8 @@ public class InicioViewController {
     @FXML // fx:id="btnIniciarSesion"
     private Button btnIniciarSesion; // Value injected by FXMLLoader
 
-    @FXML // fx:id="menuBtnYoSoy"
-    private MenuButton menuBtnYoSoy; // Value injected by FXMLLoader
+    @FXML // fx:id="comboboxyosoy"
+    private ComboBox<String> comboboxyosoy; // Value injected by FXMLLoader
 
     @FXML // fx:id="hyperLinkRecuperarContraseña"
     private Hyperlink hyperLinkRecuperarContraseña; // Value injected by FXMLLoader
@@ -48,74 +52,35 @@ public class InicioViewController {
     private PasswordField txtContrasenia; // Value injected by FXMLLoader
 
     @FXML
-    private MenuItem administradorMenuItem;
-
-    @FXML
-    private MenuItem empleadoMenuItem;
-
-    @FXML
-    private MenuItem clienteMenuItem;
-
-    private Collection<Persona> listaPersonas;
-
-
-    
-
-    @FXML
     void iniciarSesion(ActionEvent event) {
         String correoIngresado = txtCorreoElectronico.getText();
         String contraseñaIngresada = txtContrasenia.getText();
-        // Encuentra a la persona que coincide con el correo ingresado
+        String tipopersona = comboboxyosoy.getSelectionModel().getSelectedItem();
+        boolean valido = Validardatos(tipopersona,correoIngresado,contraseñaIngresada);
+        if (valido) {
+            // Encuentra a la persona que coincide con el correo ingresado
         Optional<Persona> personaEncontrada = listaPersonas.stream()
-                .filter(persona -> persona.getCorreo().equals(correoIngresado))
+                .filter(persona -> persona.getCorreo().equals(correoIngresado) && persona.getContraseña().equals(contraseñaIngresada))
                 .findFirst();
-        // Si la persona existe, establece la frase de seguridad en el label
         if (personaEncontrada.isPresent()) {
             Persona persona = personaEncontrada.get();
-            if (persona instanceof Administrador && persona.getContraseña().equals(contraseñaIngresada)) {
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/AdminView.fxml"));
-                    Parent root = loader.load();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.setTitle("Gestion Empleados");
-                    stage.show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.out.println("Error al cargar la vista: " + e.getMessage());
-                }
+            if (persona instanceof Administrador && tipopersona.equals("Administrador")) {
+                app.openAdministrador();
+            }else if (persona instanceof Empleado && tipopersona.equals("Empleado")) {
+                app.openEmpleado();
+            }else if (persona instanceof Cliente && tipopersona.equals("Cliente")) {
+                app.openCliente();
+            }else{
+                // Si no se encuentra la persona, muestra un mensaje de alerta
+                mostrarAlerta(AlertType.ERROR, "Usuario no encontrado", "Verifique los datos ingresados.");
             }
-            if (persona instanceof Empleado && persona.getContraseña().equals(contraseñaIngresada)) {
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/EmpleadoView.fxml"));
-                    Parent root = loader.load();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.setTitle("Gestiones del Empleado");
-                    stage.show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.out.println("Error al cargar la vista: " + e.getMessage());
-                }
-            }
-            if (persona instanceof Cliente && persona.getContraseña().equals(contraseñaIngresada)) {
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/ClienteView.fxml"));
-                    Parent root = loader.load();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.setTitle("Gestiones del Cliente");
-                    stage.show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.out.println("Error al cargar la vista: " + e.getMessage());
-                }
-            }
+            
+            
         }else {
             // Si no se encuentra la persona, muestra un mensaje de alerta
             mostrarAlerta(AlertType.ERROR, "Usuario no encontrado", "Verifique los datos ingresados.");
         }
-
+        }
     }
 
 
@@ -128,7 +93,7 @@ public class InicioViewController {
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert btnIniciarSesion != null : "fx:id=\"btnIniciarSesion\" was not injected: check your FXML file 'InicioView.fxml'.";
-        assert menuBtnYoSoy != null : "fx:id=\"menuBtnYoSoy\" was not injected: check your FXML file 'InicioView.fxml'.";
+        assert comboboxyosoy != null : "fx:id=\"comboboxyosoy\" was not injected: check your FXML file 'InicioView.fxml'.";
         assert hyperLinkRecuperarContraseña != null : "fx:id=\"hyperLinkRecuperarContraseña\" was not injected: check your FXML file 'InicioView.fxml'.";
         assert txtCorreoElectronico != null : "fx:id=\"txtCorreoElectronico\" was not injected: check your FXML file 'InicioView.fxml'.";
         assert txtContrasenia != null : "fx:id=\"txtContrasenia\" was not injected: check your FXML file 'InicioView.fxml'.";
@@ -149,6 +114,26 @@ public class InicioViewController {
         alerta.setHeaderText(null);
         alerta.setContentText(contenido);
         alerta.showAndWait();
+    }
+
+    public void setApp(App app) {
+        this.app = app;
+        personacontroller = new Personacontroller(app.getConcesionario());
+        obtenerpersonas();
+        comboboxyosoy.setItems(tipopersona);
+        comboboxyosoy.setValue("");
+    }
+
+    public void obtenerpersonas(){
+        listaPersonas.addAll(personacontroller.obtenerlistapersonas());
+    }
+
+    public boolean Validardatos(String tipo, String correo, String contraseña){
+        if(tipo.equals("")||correo.isEmpty() || contraseña.isEmpty()){
+            mostrarAlerta(AlertType.WARNING, "Datos incompletos", "Rellene los datos correctamente");
+            return false;
+        }
+        return true;
     }
 }
 

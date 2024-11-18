@@ -288,4 +288,13 @@ public class Concesionario {
         }
         return respuesta;
     }
+
+    public boolean Login(String correo, String contraseña){
+        for (Persona persona : listapersonas) {
+            if (persona.getCorreo().equals(correo) && persona.getContraseña().equals(contraseña)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

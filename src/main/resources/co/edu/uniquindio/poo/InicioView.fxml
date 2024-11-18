@@ -58,15 +58,7 @@
             <Font name="Castellar" size="15.0" />
          </font>
       </Label>
-      <MenuButton fx:id="menuBtnYoSoy" layoutX="203.0" layoutY="167.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="252.0" text="MenuButton">
-        <items>
-           <items>
-          <MenuItem fx:id="administradorMenuItem" text="Administrador" />
-          <MenuItem fx:id="empleadoMenuItem" text="Empleado" />
-          <MenuItem fx:id="clienteMenuItem" text="Cliente" />
-        </items>
-        </items>
-      </MenuButton>
       <Hyperlink fx:id="hyperLinkRecuperarContraseña" layoutX="127.0" layoutY="466.0" onAction="#recuperarContraseñaAction" text="¿Olvidaste tu contraseña?" />
+      <ComboBox fx:id="comboboxyosoy" layoutX="186.0" layoutY="171.0" prefHeight="25.0" prefWidth="220.0" />
    </children>
 </AnchorPane>
