@@ -15,6 +15,7 @@ import co.edu.uniquindio.poo.model.Estado;
 import co.edu.uniquindio.poo.model.MotoElectrico;
 import co.edu.uniquindio.poo.model.Transaccion;
 import co.edu.uniquindio.poo.model.Transmision;
+import co.edu.uniquindio.poo.model.Venta;
 
 
 /**
@@ -55,35 +56,35 @@ public void CRUDTransaccionTest() {
     assertEquals("El vehículo se añadió correctamente", respuesta); // Vehículo no existe, así que se agrega
 
     // Crear y agregar transacción
-    Transaccion transaccion = new Transaccion("54", LocalDate.of(1994, 5, 30), 500000f, cliente, empleado, motoElectrico);
-    respuesta = concesionario.AgregarTransaccion(transaccion);
+    Venta venta = new Venta("54", LocalDate.of(1994, 5, 30), 500000f, cliente, empleado, motoElectrico, "Tarjeta" , true);
+    respuesta = concesionario.AgregarTransaccion(venta);
     assertEquals("La transaccion se añadió correctamente", respuesta); // Transacción no existe, así que se agrega
 
     // Verificar que la transacción se asocia automáticamente al cliente, empleado y vehículo
     LinkedList<Transaccion> listaaux = new LinkedList<>();
-    listaaux.add(transaccion);
+    listaaux.add(venta);
     assertEquals(listaaux, cliente.getListatransacciones()); // Transacción asociada al cliente
     assertEquals(listaaux, empleado.getListatransacciones()); // Transacción asociada al empleado
     assertEquals(listaaux, motoElectrico.getListatransacciones()); // Transacción asociada al vehículo
 
     // Buscar transacción
-    Transaccion transaccionaux = concesionario.BuscarTransaccion(transaccion.getIdtransaccion());
-    assertEquals(transaccion, transaccionaux); // Encuentra la transacción en el sistema
+    Transaccion transaccionaux = concesionario.BuscarTransaccion(venta.getIdtransaccion());
+    assertEquals(venta, transaccionaux); // Encuentra la transacción en el sistema
 
     // Actualizar transacción
-    transaccion.setIdtransaccion("99"); // Cambiar ID de la transacción
-    respuesta = concesionario.ActualizarTransaccion(transaccionaux, transaccion);
+    venta.setIdtransaccion("99"); // Cambiar ID de la transacción
+    respuesta = concesionario.ActualizarTransaccion(transaccionaux, venta);
     assertEquals("La transacción ha sido actualizada", respuesta); // Transacción actualizada correctamente
 
     // Verificar que la actualización se refleja en cliente, empleado y vehículo
     listaaux.clear();
-    listaaux.add(transaccion);
+    listaaux.add(venta);
     assertEquals(listaaux, cliente.getListatransacciones()); // Transacción actualizada en cliente
     assertEquals(listaaux, empleado.getListatransacciones()); // Transacción actualizada en empleado
     assertEquals(listaaux, motoElectrico.getListatransacciones()); // Transacción actualizada en vehículo
 
     // Eliminar transacción
-    respuesta = concesionario.EliminarTransaccion(transaccion);
+    respuesta = concesionario.EliminarTransaccion(venta);
     assertEquals("La transaccion se eliminó correctamente", respuesta); // Transacción eliminada correctamente
 
     // Verificar que la transacción se elimina de cliente, empleado y vehículo
@@ -93,11 +94,11 @@ public void CRUDTransaccionTest() {
     assertEquals(listaaux, motoElectrico.getListatransacciones()); // Transacción eliminada del vehículo
 
     // Intentar eliminar una transacción que ya no existe
-    respuesta = concesionario.EliminarTransaccion(transaccion);
+    respuesta = concesionario.EliminarTransaccion(venta);
     assertEquals("Esta transaccion no existe", respuesta); // Transacción no existe, no se puede eliminar
 
     // Buscar transacción eliminada
-    transaccionaux = concesionario.BuscarTransaccion(transaccion.getIdtransaccion());
+    transaccionaux = concesionario.BuscarTransaccion(venta.getIdtransaccion());
     assertNull(transaccionaux); // No encuentra la transacción, devuelve null
 
     LOG.info("Finalizando test ");

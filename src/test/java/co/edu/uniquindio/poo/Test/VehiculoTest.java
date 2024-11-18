@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
+import co.edu.uniquindio.poo.model.Alquiler;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Empleado;
@@ -44,34 +45,34 @@ public void CRUDTransaccionTest() {
     MotoElectrico motoElectrico = new MotoElectrico("12", "Yamaha", "2024", 7, 300f, 200f, Transmision.MANUAL, Estado.NUEVO, 3f, 2f);
     concesionario.AgregarVehiculo(motoElectrico);
 
-    // Crear y agregar transacción
-    Transaccion transaccion = new Transaccion("54", LocalDate.of(1994, 5, 30), 500000f, cliente, empleado, motoElectrico);
-    concesionario.AgregarTransaccion(transaccion);
-    String respuesta = motoElectrico.AgregarTransaccion(transaccion);
-    assertEquals("La transaccion se añadió correctamente", respuesta); // Transacción no existe, así que se agrega
+    // Crear transaccion y verificar que se agregue automaticamente
+    Alquiler alquiler = new Alquiler("54", LocalDate.of(1994, 5, 30), 500000f, cliente, empleado, motoElectrico,LocalDate.of(1994, 6, 5),6);
+    concesionario.AgregarTransaccion(alquiler);
+    String respuesta = motoElectrico.AgregarTransaccion(alquiler);
+    assertEquals("Esta transaccion ya existe", respuesta); // Transacción se agrega automaticamente entonces ya existe.
 
     // Intentar agregar una transacción nula
     assertThrows(IllegalArgumentException.class, () -> motoElectrico.AgregarTransaccion(null)); // Lanza IllegalArgumentException si transacción = null
 
     // Buscar transacción
-    Transaccion transaccionaux = motoElectrico.BuscarTransaccion(transaccion.getIdtransaccion());
-    assertEquals(transaccion, transaccionaux); // Encuentra la transacción en el sistema
+    Transaccion transaccionaux = motoElectrico.BuscarTransaccion(alquiler.getIdtransaccion());
+    assertEquals(alquiler, transaccionaux); // Encuentra la transacción en el sistema
 
     // Actualizar transacción
-    transaccion.setIdtransaccion("99"); // Cambiar ID de la transacción
-    respuesta = motoElectrico.ActualizarTransaccion(transaccionaux, transaccion);
+    alquiler.setIdtransaccion("99"); // Cambiar ID de la transacción
+    respuesta = motoElectrico.ActualizarTransaccion(transaccionaux, alquiler);
     assertEquals("La transacción ha sido actualizada", respuesta); // Transacción actualizada correctamente
 
     // Eliminar transacción
-    respuesta = motoElectrico.EliminarTransaccion(transaccion);
+    respuesta = motoElectrico.EliminarTransaccion(alquiler);
     assertEquals("La transaccion se eliminó correctamente", respuesta); // Transacción eliminada correctamentensacción eliminada del vehículo
 
     // Intentar eliminar una transacción que ya no existe
-    respuesta = motoElectrico.EliminarTransaccion(transaccion);
+    respuesta = motoElectrico.EliminarTransaccion(alquiler);
     assertEquals("Esta transaccion no existe", respuesta); // Transacción no existe, no se puede eliminar
 
     // Buscar transacción eliminada
-    transaccionaux = motoElectrico.BuscarTransaccion(transaccion.getIdtransaccion());
+    transaccionaux = motoElectrico.BuscarTransaccion(alquiler.getIdtransaccion());
     assertNull(transaccionaux); // No encuentra la transacción, devuelve null
 
     LOG.info("Finalizando test ");
