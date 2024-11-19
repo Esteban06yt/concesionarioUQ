@@ -27,4 +27,9 @@ public class BusElectrico extends VehiculoConfortElectrico {
     public void setNumeroSalidasEmergencia(Integer numeroSalidasEmergencia) {
         this.numeroSalidasEmergencia = numeroSalidasEmergencia;
     }
+
+    @Override
+    public String toString() {
+        return "BusElectrico{idVehiculo='" + getIdVehiculo() + "', marca='" + getMarca() + "', modelo='" + getModelo() + "', cambios=" + getCambios() + ", velocidadMaxima=" + getVelocidadMaxima() + ", cilindraje=" + getCilindraje() + ", transmision=" + getTransmision() + ", estado=" + getEstado() + ", autonomia=" + getAutonomia() + ", tiempoCarga=" + getTiempoCarga() + ", numeroPasajeros=" + getNumeroPasajeros() + ", numeroPuertas=" + getNumeroPuertas() + ", capacidadMaletero=" + getCapacidadMaletero() + ", aireAcondicionado=" + getAireAcondicionado() + ", camaraReversa=" + getCamaraReversa() + ", numeroBolsasAire=" + getNumeroBolsasAire() + ", abs=" + getAbs() + ", numeroEjes=" + numeroEjes + ", numeroSalidasEmergencia=" + numeroSalidasEmergencia + "}";
+    }
 }

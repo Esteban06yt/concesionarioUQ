@@ -80,4 +80,9 @@ public class PickupHibrido extends VehiculoHibrido {
     public void setCapacidadCajaCarga(Float capacidadCajaCarga) {
         this.capacidadCajaCarga = capacidadCajaCarga;
     }
+
+    @Override
+    public String toString() {
+        return "PickupHibrido{idVehiculo='" + getIdVehiculo() + "', marca='" + getMarca() + "', modelo='" + getModelo() + "', cambios=" + getCambios() + ", velocidadMaxima=" + getVelocidadMaxima() + ", cilindraje=" + getCilindraje() + ", transmision=" + getTransmision() + ", estado=" + getEstado() + ", enchufable=" + getEnchufable() + ", hibridoLigero=" + getHibridoLigero() + ", numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa + ", numeroBolsasAire=" + numeroBolsasAire + ", abs=" + abs + ", traccion4x4=" + traccion4x4 + ", capacidadCajaCarga=" + capacidadCajaCarga + "}";
+    }
 }

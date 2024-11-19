@@ -2,7 +2,6 @@ package co.edu.uniquindio.poo.viewcontroller;
 
 import java.net.URL;
 import java.util.LinkedList;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.Controller.Personacontroller;
@@ -59,19 +58,18 @@ public class InicioViewController {
         boolean valido = Validardatos(tipopersona,correoIngresado,contraseñaIngresada);
         if (valido) {
             // Encuentra a la persona que coincide con el correo ingresado
-        Optional<Persona> personaEncontrada = listaPersonas.stream()
+        Persona personaEncontrada = listaPersonas.stream()
                 .filter(persona -> persona.getCorreo().equals(correoIngresado) && persona.getContraseña().equals(contraseñaIngresada))
-                .findFirst();
-        if (personaEncontrada.isPresent()) {
-            Persona persona = personaEncontrada.get();
-            if (persona instanceof Administrador && tipopersona.equals("Administrador")) {
-                app.openAdministrador();
+                .findFirst().orElse(null);
+        if (personaEncontrada != null) {
+            if (personaEncontrada instanceof Administrador && tipopersona.equals("Administrador")) {
+                app.openAdministrador((Administrador)personaEncontrada);
                 Limpiarseleccion();
-            }else if (persona instanceof Empleado && tipopersona.equals("Empleado")) {
-                app.openEmpleado();
+            }else if (personaEncontrada instanceof Empleado && tipopersona.equals("Empleado")) {
+                app.openEmpleado((Empleado)personaEncontrada);
                 Limpiarseleccion();
-            }else if (persona instanceof Cliente && tipopersona.equals("Cliente")) {
-                app.openCliente();
+            }else if (personaEncontrada instanceof Cliente && tipopersona.equals("Cliente")) {
+                app.openCliente((Cliente)personaEncontrada);
                 Limpiarseleccion();
             }else{
                 // Si no se encuentra la persona, muestra un mensaje de alerta
@@ -90,7 +88,7 @@ public class InicioViewController {
 
     @FXML
     void recuperarContraseñaAction(ActionEvent event) {
-
+        app.openRecuperarContraseña();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete

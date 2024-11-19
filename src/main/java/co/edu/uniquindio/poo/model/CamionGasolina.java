@@ -61,4 +61,9 @@ public class CamionGasolina extends VehiculoGasolina {
     public void setTipoCamion(String tipoCamion) {
         this.tipoCamion = tipoCamion;
     }
+
+    @Override
+    public String toString() {
+        return "CamionGasolina{idVehiculo='" + getIdVehiculo() + "', marca='" + getMarca() + "', modelo='" + getModelo() + "', cambios=" + getCambios() + ", velocidadMaxima=" + getVelocidadMaxima() + ", cilindraje=" + getCilindraje() + ", transmision=" + getTransmision() + ", estado=" + getEstado() + ", capacidadCarga=" + capacidadCarga + ", aireAcondicionado=" + aireAcondicionado + ", frenosAire=" + frenosAire + ", abs=" + abs + ", numeroEjes=" + numeroEjes + ", tipoCamion='" + tipoCamion + "'}";
+    }
 }

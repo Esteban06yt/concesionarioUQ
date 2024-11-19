@@ -45,4 +45,9 @@ public class SedanElectrico extends VehiculoConfortElectrico {
     public void setAsistentePermanenciaCarril(Boolean asistentePermanenciaCarril) {
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }
+
+    @Override
+    public String toString() {
+        return "SedanElectrico{idVehiculo='" + getIdVehiculo() + "', marca='" + getMarca() + "', modelo='" + getModelo() + "', cambios=" + getCambios() + ", velocidadMaxima=" + getVelocidadMaxima() + ", cilindraje=" + getCilindraje() + ", transmision=" + getTransmision() + ", estado=" + getEstado() + ", autonomia=" + getAutonomia() + ", tiempoCarga=" + getTiempoCarga() + ", numeroPasajeros=" + getNumeroPasajeros() + ", numeroPuertas=" + getNumeroPuertas() + ", capacidadMaletero=" + getCapacidadMaletero() + ", aireAcondicionado=" + getAireAcondicionado() + ", camaraReversa=" + getCamaraReversa() + ", numeroBolsasAire=" + getNumeroBolsasAire() + ", abs=" + getAbs() + ", velocidadCrucero=" + velocidadCrucero + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado + ", asistentePermanenciaCarril=" + asistentePermanenciaCarril + "}";
+    }
 }

@@ -8,9 +8,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="994.0" prefWidth="1914.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewcontroller.ClienteViewController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="828.0" layoutX="-13.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="636.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="994.0" layoutX="-13.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="1926.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.9514563106796117">
                <stops>
@@ -20,93 +20,43 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <ImageView fitHeight="66.0" fitWidth="200.0" layoutX="184.0" layoutY="38.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="178.0" layoutX="29.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="1842.0" />
+      <ImageView fitHeight="114.0" fitWidth="293.0" layoutX="738.0" layoutY="66.0">
          <image>
             <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20120357.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a6d4ff" height="197.0" layoutX="53.0" layoutY="157.0" stroke="BLACK" strokeType="INSIDE" width="491.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003aff" height="43.0" layoutX="84.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <ImageView fitHeight="96.0" fitWidth="200.0" layoutX="320.0" layoutY="217.0">
+      <ImageView fitHeight="96.0" fitWidth="200.0" layoutX="981.0" layoutY="75.0">
          <image>
             <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20123242.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003aff" height="43.0" layoutX="84.0" layoutY="237.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003aff" height="43.0" layoutX="84.0" layoutY="295.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Label layoutX="118.0" layoutY="190.0" text="Comprar" textFill="WHITE">
-         <font>
-            <Font name="Castellar" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="118.0" layoutY="247.0" text="Vender" textFill="WHITE">
-         <font>
-            <Font name="Castellar" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="115.0" layoutY="306.0" text="ALquilar" textFill="WHITE">
-         <font>
-            <Font name="Castellar" size="19.0" />
-         </font>
-      </Label>
-      <Separator layoutX="4.0" layoutY="384.0" prefHeight="0.0" prefWidth="595.0" />
-      <Separator layoutX="7.0" layoutY="143.0" prefHeight="0.0" prefWidth="595.0" />
-      <TableView fx:id="tableMoto" layoutX="53.0" layoutY="492.0" prefHeight="314.0" prefWidth="491.0">
-        <columns>
-          <TableColumn prefWidth="85.0" text="Marca" />
-          <TableColumn prefWidth="103.0" text="Nuevo/Usado" />
-            <TableColumn prefWidth="87.0" text="Modelo" />
-            <TableColumn prefWidth="67.0" text="Cambios" />
-            <TableColumn prefWidth="72.0" text="Max. Vel." />
-            <TableColumn prefWidth="75.0" text="Cilindraje" />
-        </columns>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="595.0" layoutX="31.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="8.0" width="1836.0" />
+      <TableView fx:id="tableClienteReservas" layoutX="37.0" layoutY="320.0" prefHeight="580.0" prefWidth="1823.0">
+         <columns>
+            <TableColumn fx:id="columnIDTransaccion" prefWidth="181.0" text="ID Transacción" />
+            <TableColumn fx:id="columnFecha" prefWidth="219.0" text="Fecha" />
+            <TableColumn fx:id="columnPrecioTotal" minWidth="0.0" prefWidth="179.0" text="Precio Total $" />
+            <TableColumn fx:id="columnNombreEmpleado" prefWidth="270.0" text="Nombre Empleado" />
+            <TableColumn fx:id="columnVehiculo" prefWidth="128.0" text="Vehiculo" />
+            <TableColumn fx:id="columnFechaDevolucion" prefWidth="247.0" text="Fecha de Devolución" />
+            <TableColumn fx:id="columnDuracionAlquiler" prefWidth="197.0" text="Duración Alquiler" />
+            <TableColumn fx:id="columnMetodoDePago" prefWidth="240.0" text="Método de Pago" />
+            <TableColumn fx:id="columnGarantia" prefWidth="161.0" text="Garantía" />
+         </columns>
       </TableView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00efff" height="26.0" layoutX="42.0" layoutY="414.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00faff" height="26.0" layoutX="42.0" layoutY="445.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00efff" height="26.0" layoutX="171.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00efff" height="26.0" layoutX="171.0" layoutY="445.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="AQUA" height="26.0" layoutX="301.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00faff" height="26.0" layoutX="301.0" layoutY="445.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00ffef" height="26.0" layoutX="431.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00efff" height="26.0" layoutX="432.0" layoutY="445.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
-      <Label layoutX="69.0" layoutY="418.0" text="moto">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="1692.0" layoutY="925.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="174.0" />
+      <Label layoutX="1707.0" layoutY="938.0" text="cerrar sesion">
          <font>
-            <Font name="Castellar" size="15.0" />
+            <Font name="Copperplate Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="418.0" text="sedan">
+      <Button fx:id="btnCerrarSesion1" layoutX="1693.0" layoutY="925.0" mnemonicParsing="false" onAction="#cerrarSesion" opacity="0.0" prefHeight="45.0" prefWidth="178.0" text="Cerrar Sesion" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="45.0" layoutX="31.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="8.0" width="1836.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8c9c9" height="38.0" layoutX="37.0" layoutY="283.0" stroke="BLACK" strokeType="INSIDE" width="1823.0" />
+      <Label layoutX="819.0" layoutY="279.0" text="transacciones">
          <font>
-            <Font name="Castellar" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="315.0" layoutY="417.0" text="deportivo">
-         <font>
-            <Font name="Castellar" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="439.0" layoutY="419.0" text="camioneta/suv">
-         <font>
-            <Font name="Castellar" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="67.0" layoutY="449.0" text="pick ups">
-         <font>
-            <Font name="Castellar" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="205.0" layoutY="449.0" text="vans">
-         <font>
-            <Font name="Castellar" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="339.0" layoutY="449.0" text="buses">
-         <font>
-            <Font name="Castellar" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="449.0" layoutY="448.0" text="camiones">
-         <font>
-            <Font name="Castellar" size="15.0" />
+            <Font name="Copperplate Gothic Bold" size="33.0" />
          </font>
       </Label>
    </children>

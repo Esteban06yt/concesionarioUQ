@@ -61,4 +61,9 @@ public class CamionElectrico extends VehiculoElectrico {
     public void setTipoCamion(String tipoCamion) {
         this.tipoCamion = tipoCamion;
     }
+
+    @Override
+    public String toString() {
+        return "CamionElectrico{idVehiculo='" + getIdVehiculo() + "', marca='" + getMarca() + "', modelo='" + getModelo() + "', cambios=" + getCambios() + ", velocidadMaxima=" + getVelocidadMaxima() + ", cilindraje=" + getCilindraje() + ", transmision=" + getTransmision() + ", estado=" + getEstado() + ", autonomia=" + getAutonomia() + ", tiempoCarga=" + getTiempoCarga() + ", capacidadCarga=" + capacidadCarga + ", aireAcondicionado=" + aireAcondicionado + ", frenosAire=" + frenosAire + ", abs=" + abs + ", numeroEjes=" + numeroEjes + ", tipoCamion='" + tipoCamion + "'}";
+    }
 }

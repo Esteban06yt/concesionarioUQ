@@ -52,4 +52,9 @@ public class DeportivoHibrido extends VehiculoHibrido {
     public void setTiempoCienKmh(Float tiempoCienKmh) {
         this.tiempoCienKmh = tiempoCienKmh;
     }
+
+    @Override
+    public String toString() {
+        return "DeportivoHibrido{idVehiculo='" + getIdVehiculo() + "', marca='" + getMarca() + "', modelo='" + getModelo() + "', cambios=" + getCambios() + ", velocidadMaxima=" + getVelocidadMaxima() + ", cilindraje=" + getCilindraje() + ", transmision=" + getTransmision() + ", estado=" + getEstado() + ", enchufable=" + getEnchufable()+ ", hibridoLigero=" + getHibridoLigero() + ", numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", numeroBolsasAire=" + numeroBolsasAire + ", caballosFuerza=" + caballosFuerza + ", tiempoCienKmh=" + tiempoCienKmh + "}";
+    }
 }

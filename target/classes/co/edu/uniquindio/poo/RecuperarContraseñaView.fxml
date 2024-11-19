@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.controller.RecuperarContraseñaViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewcontroller.RecuperarContraseñaViewController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="817.0" stroke="BLACK" strokeType="INSIDE" width="701.0">
          <fill>
@@ -22,41 +22,41 @@
       </Rectangle>
       <ImageView fitHeight="66.0" fitWidth="200.0" layoutX="251.0" layoutY="14.0">
          <image>
-            <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20120357.png" />
+            <Image url="@Imagenes/Logo.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="85.0" fitWidth="192.0" layoutX="474.0" layoutY="10.0">
          <image>
-            <Image url="@../../../../../../../../../../../Imágenes/Screenshots/Captura%20de%20pantalla%202024-11-17%20123242.png" />
+            <Image url="@Imagenes/Carrito.jpg" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7abfff" height="340.0" layoutX="89.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="530.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="73.0" layoutX="117.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
-      <Label layoutX="126.0" layoutY="133.0" prefHeight="35.0" prefWidth="478.0" text="En Tu Carro UQ velamos por la seguridad de los datos, por favor " />
-      <Label layoutX="126.0" layoutY="151.0" prefHeight="35.0" prefWidth="478.0" text="ingresa tu correo y responde la pregunta de seguridad." />
-      <Label layoutX="124.0" layoutY="175.0" prefHeight="35.0" prefWidth="478.0" text="¡Esto nos ayudará a verificar que eres tú! " />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.0" layoutX="115.0" layoutY="221.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
-      <Label layoutX="124.0" layoutY="234.0" text="Correo Electronico: ">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="73.0" layoutX="117.0" layoutY="194.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
+      <Label layoutX="124.0" layoutY="196.0" prefHeight="35.0" prefWidth="478.0" text="En Tu Carro UQ velamos por la seguridad de los datos, por favor " />
+      <Label layoutX="124.0" layoutY="213.0" prefHeight="35.0" prefWidth="478.0" text="ingresa tu correo y responde la pregunta de seguridad." />
+      <Label layoutX="124.0" layoutY="231.0" prefHeight="35.0" prefWidth="478.0" text="¡Esto nos ayudará a verificar que eres tú! " />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.0" layoutX="117.0" layoutY="279.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
+      <Label layoutX="123.0" layoutY="301.0" text="Correo Electronico: ">
          <font>
             <Font name="Castellar" size="11.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCorreoElectronico" layoutX="124.0" layoutY="255.0" prefHeight="31.0" prefWidth="365.0" />
-      <Button fx:id="btnConfirmarCorreo" layoutX="497.0" layoutY="255.0" mnemonicParsing="false" onAction="#confirmarCorreo" prefHeight="31.0" prefWidth="86.0" text="Confirmar" />
-      <TextField fx:id="textFraseSeguridad" layoutX="125.0" layoutY="345.0" prefHeight="31.0" prefWidth="458.0" />
+      <TextField fx:id="txtCorreoElectronico" layoutX="126.0" layoutY="337.0" prefHeight="31.0" prefWidth="365.0" />
+      <Button fx:id="btnConfirmarCorreo" layoutX="504.0" layoutY="337.0" mnemonicParsing="false" onAction="#confirmarCorreo" prefHeight="31.0" prefWidth="86.0" text="Confirmar" />
+      <TextField fx:id="textFraseSeguridad" layoutX="127.0" layoutY="393.0" prefHeight="31.0" prefWidth="458.0" />
       <Label layoutX="124.0" layoutY="317.0">
          <font>
             <Font name="Castellar" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="labelPreguntaSeguridad" layoutX="126.0" layoutY="309.0" prefHeight="35.0" prefWidth="478.0" text="Aqui se cargará la pregunta de seguridad">
+      <Label fx:id="labelPreguntaSeguridad" layoutX="126.0" layoutY="361.0" prefHeight="35.0" prefWidth="478.0" text="Aqui se cargará la pregunta de seguridad">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7abfff" height="308.0" layoutX="86.0" layoutY="477.0" stroke="BLACK" strokeType="INSIDE" width="530.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="267.0" layoutX="112.0" layoutY="495.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
-      <Label layoutX="126.0" layoutY="513.0" text="Configura tu nueVA CONTRASEÑA">
+      <Label layoutX="126.0" layoutY="513.0" text="Configura tu nueva contraseña">
          <font>
             <Font name="Castellar" size="14.0" />
          </font>
@@ -73,12 +73,7 @@
             <Font name="Castellar" size="11.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a8d5ff" height="35.0" layoutX="279.0" layoutY="706.0" stroke="BLACK" strokeType="INSIDE" width="167.0" />
-      <Label layoutX="320.0" layoutY="714.0" text="Guardar">
-         <font>
-            <Font name="Castellar" size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnGuardarContraseña" layoutX="274.0" layoutY="708.0" mnemonicParsing="false" onAction="#guardarContraseña" opacity="0.0" prefHeight="31.0" prefWidth="176.0" text="Button" />
+      <Button fx:id="btnvolver" layoutX="260.0" layoutY="140.0" mnemonicParsing="false" onAction="#volver" prefHeight="25.0" prefWidth="167.0" text="Volver" />
+      <Button fx:id="btnguardarcontraseña" layoutX="267.0" layoutY="705.0" mnemonicParsing="false" onAction="#guardarContraseña" prefHeight="25.0" prefWidth="167.0" text="Guardar nueva contraseña" />
    </children>
 </AnchorPane>

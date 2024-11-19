@@ -6,10 +6,23 @@ import java.time.LocalDate;
 import co.edu.uniquindio.poo.model.Administrador;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Concesionario;
+import co.edu.uniquindio.poo.model.Empleado;
+import co.edu.uniquindio.poo.model.Estado;
+import co.edu.uniquindio.poo.model.MotoElectrico;
+
+import co.edu.uniquindio.poo.model.Transmision;
+import co.edu.uniquindio.poo.model.Venta;
+import co.edu.uniquindio.poo.viewcontroller.AdministradorViewController;
+import co.edu.uniquindio.poo.viewcontroller.ClienteViewController;
+import co.edu.uniquindio.poo.viewcontroller.EmpleadoViewController;
+import co.edu.uniquindio.poo.viewcontroller.GestionTransaccionesViewController;
+import co.edu.uniquindio.poo.viewcontroller.GestionarClientesViewController;
+import co.edu.uniquindio.poo.viewcontroller.GestionarVehiculosViewController;
 import co.edu.uniquindio.poo.viewcontroller.InicioViewController;
+import co.edu.uniquindio.poo.viewcontroller.RecuperarContraseñaViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -53,56 +66,172 @@ public class App extends Application {
         }
     }
 
-    public void openAdministrador(){
+    public void openAdministrador(Administrador administrador){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/AdminView.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Gestion Empleados");
-            stage.show();
-        } catch (Exception e) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/co/edu/uniquindio/poo/AdministradorView.fxml"));
+            javafx.scene.layout.AnchorPane rootLayout = (javafx.scene.layout.AnchorPane) loader.load();
+            AdministradorViewController primaryController = loader.getController();
+            primaryController.setApp(this);
+            primaryController.setAdministrador(administrador);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setTitle("Gestion Empleados");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
             System.out.println("Error al cargar la vista: " + e.getMessage());
         }
     }
 
-    public void openEmpleado(){
+    public void openEmpleado(Empleado empleado){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/EmpleadoView.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Gestiones del Empleado");
-            stage.show();
-        } catch (Exception e) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/co/edu/uniquindio/poo/EmpleadoView.fxml"));
+            javafx.scene.layout.AnchorPane rootLayout = (javafx.scene.layout.AnchorPane) loader.load();
+            EmpleadoViewController primaryController = loader.getController();
+            primaryController.setApp(this);
+            primaryController.setEmpleado(empleado);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setTitle("Gestiones del Empleado");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Error al cargar la vista: " + e.getMessage());
+        }
+
+    }
+
+    public void openCliente(Cliente cliente){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/co/edu/uniquindio/poo/ClienteView.fxml"));
+            javafx.scene.layout.AnchorPane rootLayout = (javafx.scene.layout.AnchorPane) loader.load();
+            ClienteViewController primaryController = loader.getController();
+            primaryController.setApp(this);
+            primaryController.setCliente(cliente);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setTitle("Gestiones del Cliente");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
             System.out.println("Error al cargar la vista: " + e.getMessage());
         }
     }
 
-    public void openCliente(){
+    public void openRecuperarContraseña(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/ClienteView.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Gestiones del Cliente");
-            stage.show();
-        } catch (Exception e) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/co/edu/uniquindio/poo/RecuperarContraseñaView.fxml"));
+            javafx.scene.layout.AnchorPane rootLayout = (javafx.scene.layout.AnchorPane) loader.load();
+            RecuperarContraseñaViewController primaryController = loader.getController();
+            primaryController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setTitle("Recuperar contraseña");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
             System.out.println("Error al cargar la vista: " + e.getMessage());
         }
     }
+
+    public void openGestionarClientes(Empleado empleado){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/co/edu/uniquindio/poo/GestionarClientesView.fxml"));
+            javafx.scene.layout.AnchorPane rootLayout = (javafx.scene.layout.AnchorPane) loader.load();
+            GestionarClientesViewController primaryController = loader.getController();
+            primaryController.setApp(this);
+            primaryController.setEmpleado(empleado);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setTitle("Gestionar clientes");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Error al cargar la vista: " + e.getMessage());
+        }
+    }
+
+    public void openGestionarVehiculo(Empleado empleado){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/co/edu/uniquindio/poo/GestionarVehiculosView.fxml"));
+            javafx.scene.layout.AnchorPane rootLayout = (javafx.scene.layout.AnchorPane) loader.load();
+            GestionarVehiculosViewController primaryController = loader.getController();
+            primaryController.setApp(this);
+            primaryController.setEmpleado(empleado);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setTitle("Gestionar vehiculos");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Error al cargar la vista: " + e.getMessage());
+        }
+    }
+
+    public void openGestionarTransacciones(Empleado empleado){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/co/edu/uniquindio/poo/GestionarTransaccionesView.fxml"));
+            javafx.scene.layout.AnchorPane rootLayout = (javafx.scene.layout.AnchorPane) loader.load();
+            GestionTransaccionesViewController primaryController = loader.getController();
+            primaryController.setApp(this);
+            primaryController.setEmpleado(empleado);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setTitle("Gestionar Transacciones");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Error al cargar la vista: " + e.getMessage());
+        }
+    }
+
     public void inicializarData() {
-        Administrador administrador = new Administrador("Paco", "1234", "paco@gmail.com", "32323232", LocalDate.of(1994, 12, 23), "Paco123", "12345678", "¿Color de pelo?", "negro", "1");
-        concesionario.AgregarPersona(administrador);
-        Cliente cliente = new Cliente("Pepe", "5678", "pepe@gmail.com", "32323232", LocalDate.of(1999, 10, 13), "pepe123", "12345678", "¿Color de pelo?", "negro");
-        concesionario.AgregarPersona(cliente);
+   
+    Cliente cliente = new Cliente("Juan", "1094901954", "Juanito@gmail.com", "546548", LocalDate.of(2004, 2, 12), "Juanito123", "1234", "¿Color de pelo?", "rojo");
+    concesionario.AgregarPersona(cliente);
+    
+    Empleado empleado = new Empleado("Paco", "2135446", "Paco213@gmail.com", "54654564", LocalDate.of(1994, 3, 6), "Paco576", "0000", "¿Comida fav?", "pizza", "54");
+    concesionario.AgregarPersona(empleado);
+    empleado.AgregarCliente(cliente);
+
+    Administrador administrador = new Administrador("Pedro", "546546", "Pedrosisi@gmail.com", "54664231", LocalDate.of(1990, 5, 23), "Pedritoproxd", "12345678", "¿pais favorito?", "francia", "1");
+    concesionario.AgregarPersona(administrador);
+
+    Administrador administrador2 = new Administrador("a", "a", "a", "a", LocalDate.of(1990, 5, 23), "a", "a", "a", "a", "2");
+    concesionario.AgregarPersona(administrador2);
+    administrador.AgregarEmpleado(empleado);
+
+    MotoElectrico motoElectrico = new MotoElectrico("12", "Yamaha", "2024", 7, 300f, 200f, Transmision.MANUAL, Estado.NUEVO, 3f, 2f);
+    concesionario.AgregarVehiculo(motoElectrico);
+    empleado.AgregarVehiculo(motoElectrico);
+   
+    Venta venta = new Venta("54", LocalDate.of(1994, 5, 30), 500000f, cliente, empleado, motoElectrico, "Tarjeta" , true);
+    concesionario.AgregarTransaccion(venta);
+
     }
+
     public Concesionario getConcesionario() {
         return concesionario;
     }
-
-
 }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1005.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewcontroller.AdministradorViewController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="1003.0" stroke="BLACK" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="INSIDE" width="1918.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#caf4f8" />
+                  <Stop color="#caf4f8" offset="0.007246376811594203" />
+                  <Stop color="#ffeeee" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="159.0" layoutX="32.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="1856.0" />
+      <ImageView fitHeight="111.0" fitWidth="385.0" layoutX="749.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagenes/Logo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1082.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagenes/Carrito.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="788.0" layoutX="15.0" layoutY="189.0" stroke="BLACK" strokeType="INSIDE" width="1472.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="788.0" layoutX="1498.0" layoutY="189.0" stroke="BLACK" strokeType="INSIDE" width="404.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="743.0" layoutX="33.0" layoutY="212.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="1434.0" />
+      <TableView fx:id="tblempleados" layoutX="39.0" layoutY="216.0" prefHeight="736.0" prefWidth="1425.0">
+        <columns>
+          <TableColumn fx:id="columnnombre" prefWidth="142.0" text="Nombre" />
+          <TableColumn fx:id="columncedula" prefWidth="102.0" text="Cedula" />
+            <TableColumn fx:id="columncorreo" prefWidth="183.0" text="Correo" />
+            <TableColumn fx:id="columntelefono" prefWidth="127.0" text="Telefono" />
+            <TableColumn fx:id="columnfecha" minWidth="0.0" prefWidth="154.0" text="Fecha de Nacimiento" />
+            <TableColumn fx:id="columnusuario" prefWidth="114.0" text="Usuario" />
+            <TableColumn fx:id="columncontraseña" prefWidth="113.0" text="Contraseña" />
+            <TableColumn fx:id="columnpregunta" prefWidth="211.0" text="Pregunta de Seguridad" />
+            <TableColumn fx:id="columnfrase" prefWidth="181.0" text="Frase de Seguridad" />
+            <TableColumn fx:id="columnid" prefWidth="96.0" text="ID" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e3f2ff" height="695.0" layoutX="1513.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="374.0" />
+      <TextField fx:id="txtnombre" layoutX="1527.0" layoutY="229.0" prefHeight="31.0" prefWidth="344.0" promptText="Nombre" />
+      <TextField fx:id="txtcedula" layoutX="1528.0" layoutY="270.0" prefHeight="31.0" prefWidth="344.0" promptText="Cédula" />
+      <TextField fx:id="txtcorreo" layoutX="1527.0" layoutY="312.0" prefHeight="31.0" prefWidth="344.0" promptText="Correo" />
+      <TextField fx:id="txttelefono" layoutX="1527.0" layoutY="351.0" prefHeight="31.0" prefWidth="344.0" promptText="Telefono" />
+      <TextField fx:id="txtusuario" layoutX="1527.0" layoutY="429.0" prefHeight="31.0" prefWidth="344.0" promptText="Usuario" />
+      <TextField fx:id="txtcontraseña" layoutX="1527.0" layoutY="469.0" prefHeight="31.0" prefWidth="344.0" promptText="Contraseña" />
+      <TextField fx:id="txtfrase" layoutX="1527.0" layoutY="548.0" prefHeight="31.0" prefWidth="344.0" promptText="Frase de Seguridad" />
+      <TextField fx:id="txtpregunta" layoutX="1527.0" layoutY="509.0" prefHeight="31.0" prefWidth="344.0" promptText="Pregunta de Seguridad" />
+      <TextField fx:id="txtid" layoutX="1528.0" layoutY="584.0" prefHeight="31.0" prefWidth="344.0" promptText="ID" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="1612.0" layoutY="917.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="174.0" />
+      <Label layoutX="1628.0" layoutY="930.0" text="cerrar sesion">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCerrarSesion" layoutX="1610.0" layoutY="918.0" mnemonicParsing="false" onAction="#cerrarSesion" opacity="0.0" prefHeight="45.0" prefWidth="178.0" text="Cerrar Sesion" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="37.0" layoutX="1582.0" layoutY="673.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="233.0" />
+      <Label layoutX="1610.0" layoutY="682.0" text="Agregar Empleado">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="37.0" layoutX="1582.0" layoutY="725.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="233.0" />
+      <Label layoutX="1591.0" layoutY="734.0" text="Actualizar Empleado">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="37.0" layoutX="1582.0" layoutY="777.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="233.0" />
+      <Label layoutX="1603.0" layoutY="786.0" text="Eliminar Empleado">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEliminarEmpleado" layoutX="1580.0" layoutY="775.0" mnemonicParsing="false" onAction="#eliminarEmpleadoAction" opacity="0.0" prefHeight="41.0" prefWidth="237.0" text="Cerrar Sesioneliminar empleado" />
+      <Button fx:id="btnActualizarEmpleado" layoutX="1582.0" layoutY="724.0" mnemonicParsing="false" onAction="#actualizarEmpleadoAction" opacity="0.0" prefHeight="41.0" prefWidth="237.0" text="actualizar empleado" />
+      <Button fx:id="btnAgregarEmpleado" layoutX="1580.0" layoutY="671.0" mnemonicParsing="false" onAction="#agregarEmpleadoAction" opacity="0.0" prefHeight="41.0" prefWidth="237.0" text="Agregar empleado" />
+      <DatePicker fx:id="datenacimiento" layoutX="1528.0" layoutY="393.0" prefHeight="25.0" prefWidth="344.0" />
+   </children>
+</AnchorPane>

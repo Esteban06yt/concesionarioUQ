@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1005.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewcontroller.GestionTransaccionesViewController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="1005.0" stroke="BLACK" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="INSIDE" width="1918.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#caf4f8" />
+                  <Stop color="#caf4f8" offset="0.007246376811594203" />
+                  <Stop color="#ffeeee" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="159.0" layoutX="32.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="1856.0" />
+      <ImageView fitHeight="111.0" fitWidth="385.0" layoutX="749.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagenes/Logo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1082.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagenes/Carrito.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="788.0" layoutX="15.0" layoutY="189.0" stroke="BLACK" strokeType="INSIDE" width="1472.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="788.0" layoutX="1498.0" layoutY="189.0" stroke="BLACK" strokeType="INSIDE" width="404.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="436.0" layoutX="33.0" layoutY="212.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="1434.0" />
+      <TableView fx:id="tbltransacciones" layoutX="39.0" layoutY="216.0" prefHeight="429.0" prefWidth="1425.0">
+         <columns>
+            <TableColumn fx:id="columnid" prefWidth="54.0" text="ID" />
+            <TableColumn fx:id="columnfecha" prefWidth="184.0" text="Fecha" />
+            <TableColumn fx:id="columnprecio" prefWidth="134.0" text="Precio Total" />
+            <TableColumn fx:id="columncliente" prefWidth="132.0" text="Cliente " />
+            <TableColumn fx:id="columnempleado" prefWidth="159.0" text="Empleado" />
+            <TableColumn fx:id="columnvehiculo" prefWidth="154.0" text="Vehiculo" />
+            <TableColumn fx:id="columntipo" prefWidth="165.0" text="Tipo de transaccion" />
+            <TableColumn fx:id="columnduracion" prefWidth="98.0" text="Duración" />
+            <TableColumn fx:id="columndevolucion" prefWidth="134.0" text="Fecha de devolucion" />
+            <TableColumn fx:id="columnpago" prefWidth="125.0" text="Metodo de pago" />
+            <TableColumn fx:id="columngarantia" prefWidth="85.0" text="Garantia" />
+         </columns></TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e3f2ff" height="695.0" layoutX="1513.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="374.0" />
+      <TextField fx:id="txtid" layoutX="1527.0" layoutY="229.0" prefHeight="31.0" prefWidth="344.0" promptText="ID" />
+      <TextField fx:id="txtpago" layoutX="1529.0" layoutY="389.0" prefHeight="31.0" prefWidth="344.0" promptText="Metodo de pago" />
+      <TextField fx:id="txtprecio" layoutX="1527.0" layoutY="312.0" prefHeight="31.0" prefWidth="344.0" promptText="PrecioTotal" />
+      <TextField fx:id="txtalquiler" layoutX="1527.0" layoutY="508.0" prefHeight="31.0" prefWidth="344.0" promptText="Duración del alquiler" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="1612.0" layoutY="917.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="174.0" />
+      <Label layoutX="1646.0" layoutY="930.0" text="Regresar">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRegresar" layoutX="1610.0" layoutY="918.0" mnemonicParsing="false" onAction="#Regresar" opacity="0.0" prefHeight="45.0" prefWidth="178.0" text="Cerrar Sesion" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="31.0" layoutX="1578.0" layoutY="677.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="253.0" />
+      <Label layoutX="1589.0" layoutY="682.0" text="Agregar Transaccion">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="31.0" layoutX="1578.0" layoutY="728.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="253.0" />
+      <Label layoutX="1580.0" layoutY="734.0" text="Actualizar Transaccion">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="31.0" layoutX="1578.0" layoutY="777.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="253.0" />
+      <Label layoutX="1594.0" layoutY="784.0" text="Eliminar Transaccion">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEliminarTransaccion" layoutX="1581.0" layoutY="775.0" mnemonicParsing="false" onAction="#EliminarTransaccion" opacity="0.0" prefHeight="35.0" prefWidth="249.0" text="Eliminar Transaccion " />
+      <Button fx:id="btnActualizarTransaccion" layoutX="1577.0" layoutY="727.0" mnemonicParsing="false" onAction="#ActualizarTransaccion" opacity="0.0" prefHeight="35.0" prefWidth="257.0" text="Actualizar Transaccion" />
+      <Button fx:id="btnagregartransaccion" layoutX="1581.0" layoutY="677.0" mnemonicParsing="false" onAction="#AgregarTransaccion" opacity="0.0" prefHeight="31.0" prefWidth="249.0" text="Agregar Transaccion" />
+      <DatePicker fx:id="datefecha" layoutX="1529.0" layoutY="273.0" prefHeight="25.0" prefWidth="344.0" promptText="Fecha" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="316.0" layoutX="33.0" layoutY="655.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="698.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="316.0" layoutX="739.0" layoutY="655.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="725.0" />
+      <TableView fx:id="tblvehiculo" layoutX="742.0" layoutY="661.0" prefHeight="305.0" prefWidth="718.0">
+         <columns>
+            <TableColumn fx:id="columnidvehiculo" prefWidth="142.0" text="Id" />
+            <TableColumn fx:id="columnmarca" prefWidth="225.0" text="Marca" />
+            <TableColumn fx:id="columnmodelo" prefWidth="166.0" text="Modelo" />
+            <TableColumn fx:id="columntipovehiculo" prefWidth="184.0" text="Tipo de Vehiculo" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tblcliente" layoutX="39.0" layoutY="661.0" prefHeight="305.0" prefWidth="689.0">
+         <columns>
+            <TableColumn fx:id="columnnombre" prefWidth="117.0" text="Nombre" />
+            <TableColumn fx:id="columncedula" prefWidth="197.0" text="Cedula" />
+            <TableColumn fx:id="columncorreo" prefWidth="193.0" text="Correo" />
+            <TableColumn fx:id="columntelefono" prefWidth="181.0" text="Telefono" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="comboboxTipo" layoutX="1528.0" layoutY="353.0" onAction="#TipoTransaccionAction" prefHeight="25.0" prefWidth="344.0" promptText="Tipo de Transacción" />
+      <CheckBox fx:id="checkgarantia" layoutX="1529.0" layoutY="431.0" mnemonicParsing="false" text="Garantía" />
+      <DatePicker fx:id="datedevolucion" layoutX="1529.0" layoutY="463.0" prefHeight="25.0" prefWidth="344.0" promptText="Fecha de devolución" />
+   </children>
+</AnchorPane>
