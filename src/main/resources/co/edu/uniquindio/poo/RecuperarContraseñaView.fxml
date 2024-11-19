@@ -22,12 +22,12 @@
       </Rectangle>
       <ImageView fitHeight="66.0" fitWidth="200.0" layoutX="251.0" layoutY="14.0">
          <image>
-            <Image url="@Imagenes/Logo.jpg" />
+            <Image url="@Imagenes/Logo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="85.0" fitWidth="192.0" layoutX="474.0" layoutY="10.0">
          <image>
-            <Image url="@Imagenes/Carrito.jpg" />
+            <Image url="@Imagenes/Carrito.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7abfff" height="340.0" layoutX="89.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="530.0" />

@@ -29,12 +29,12 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" layoutX="52.0" layoutY="568.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="234.0" />
       <ImageView fitHeight="111.0" fitWidth="385.0" layoutX="675.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Logo.jpg" />
+            <Image url="@Imagenes/Logo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1008.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Carrito.jpg" />
+            <Image url="@Imagenes/Carrito.png" />
          </image>
       </ImageView>
       <Label layoutX="66.0" layoutY="383.0" text="Gestionar Vehiculos">

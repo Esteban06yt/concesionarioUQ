@@ -22,7 +22,7 @@
       </Rectangle>
       <ImageView fitHeight="111.0" fitWidth="385.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Logo.jpg" />
+            <Image url="@Imagenes/Logo.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#82b4ff" height="284.0" layoutX="81.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" width="617.0" />
@@ -48,7 +48,7 @@
       <Button fx:id="btnIniciarSesion" layoutX="279.0" layoutY="514.0" mnemonicParsing="false" onAction="#iniciarSesion" opacity="0.0" prefHeight="44.0" prefWidth="212.0" text="IniciarSesion" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="553.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Carrito.jpg" />
+            <Image url="@Imagenes/Carrito.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#82b4ff" height="152.0" layoutX="81.0" layoutY="137.0" stroke="BLACK" strokeType="INSIDE" width="617.0" />

@@ -24,12 +24,12 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="159.0" layoutX="32.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="1856.0" />
       <ImageView fitHeight="111.0" fitWidth="385.0" layoutX="749.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Logo.jpg" />
+            <Image url="@Imagenes/Logo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1082.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/Carrito.jpg" />
+            <Image url="@Imagenes/Carrito.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5dbff" height="788.0" layoutX="15.0" layoutY="189.0" stroke="BLACK" strokeType="INSIDE" width="1472.0" />
