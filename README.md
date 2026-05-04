@@ -1,162 +1,142 @@
-# 🏨 ReservasUQ — BookYourStay
-
-Sistema de gestión de reservas de alojamientos desarrollado con **JavaFX** como proyecto académico para la asignatura de Programación Orientada a Objetos en la **Universidad del Quindío**.
-
+# 🚗 Tu Carro UQ — Concesionario
+ 
+Sistema de gestión de concesionario de vehículos desarrollado con **JavaFX** como proyecto académico para la asignatura de Programación Orientada a Objetos en la **Universidad del Quindío**.
+ 
 ---
-
+ 
 ## 📋 Descripción
-
-**BookYourStay** permite a clientes buscar y reservar alojamientos (hoteles, casas y apartamentos), gestionar su cuenta y billetera virtual, y dejar reseñas. Los administradores pueden gestionar alojamientos, ofertas, servicios, habitaciones y consultar reportes de ganancias y ocupación.
-
+ 
+**Tu Carro UQ** permite gestionar de forma integral las operaciones de un concesionario automotriz. El sistema contempla tres roles de usuario: Administrador, Empleado y Cliente, cada uno con sus propias funcionalidades y vistas diferenciadas.
+ 
 ---
-
+ 
 ## 🚀 Funcionalidades
-
-### 👤 Cliente
-- Registro e inicio de sesión con verificación por correo
-- Recuperación de contraseña
-- Explorar y filtrar alojamientos por nombre, tipo, ciudad y capacidad
-- Reservar alojamientos y habitaciones de hotel
-- Cancelar reservas con reembolso automático
-- Recarga y consulta de billetera virtual
-- Gestión de reseñas y valoraciones
-- Notificaciones por correo electrónico con QR de factura
-
-### 🛠️ Administrador
-- Gestión completa de alojamientos (Hotel, Casa, Apartamento)
-- Gestión de habitaciones por hotel
-- Creación y edición de ofertas y descuentos
-- Gestión de servicios por alojamiento
-- Lista de clientes y control de cuentas
-- Cancelación de reservas
-- Reportes y estadísticas:
-  - Alojamientos más populares por ciudad
-  - Ganancias totales por alojamiento y tipo
-  - Ocupación porcentual por rango de fechas
-  - Promedio de valoraciones
-
+ 
+### 👤 Administrador
+- Inicio de sesión con selección de rol
+- Recuperación de contraseña mediante pregunta de seguridad
+- Gestión completa de empleados (agregar, actualizar, eliminar, listar)
+### 🛠️ Empleado
+- Gestión de vehículos asignados (agregar, actualizar, eliminar)
+- Gestión de clientes asignados (agregar, actualizar, eliminar)
+- Registro y administración de transacciones (ventas y alquileres)
+- Visualización de tablas de vehículos, clientes y transacciones
+### 🧑‍💼 Cliente
+- Consulta del historial de transacciones
+- Visualización de ventas y alquileres asociados
 ---
-
+ 
 ## 🏗️ Arquitectura
-
-El proyecto sigue un patrón en capas con el patrón **Factory** para la creación de alojamientos y **Singleton** para la sesión de usuario y el controlador principal.
-
+ 
+El proyecto sigue un patrón en capas con separación entre modelo, controlador de negocio y controlador de vista.
+ 
 ```
 src/
 ├── main/
-│   ├── java/co/edu/uniquindio/reservasuq/
-│   │   ├── controllers/       # Controladores JavaFX
-│   │   ├── model/
-│   │   │   ├── entities/      # Cliente, Reserva, Oferta, Resenia, Factura...
-│   │   │   └── factory/       # Alojamiento, Hotel, Casa, Apartamento, Habitacion
-│   │   ├── repositories/      # Persistencia por serialización
-│   │   ├── services/          # Lógica de negocio
-│   │   ├── config/            # Sesión, configuración de correo
-│   │   └── utils/             # Persistencia, QR, envío de email, validación
-│   └── resources/             # Vistas FXML
-└── test/                      # Pruebas JUnit 5
+│   ├── java/co/edu/uniquindio/poo/
+│   │   ├── Controller/          # Controladores de negocio
+│   │   │   ├── Personacontroller.java
+│   │   │   ├── TransaccionController.java
+│   │   │   └── VehiculoController.java
+│   │   ├── model/               # Entidades del dominio
+│   │   │   ├── Persona, Cliente, Empleado, Administrador
+│   │   │   ├── Vehiculo y subclases (Moto, Sedan, SUV, Bus, etc.)
+│   │   │   ├── Transaccion, Venta, Alquiler
+│   │   │   └── Enums: Estado, Transmision
+│   │   ├── viewcontroller/      # Controladores JavaFX
+│   │   └── application/         # Punto de entrada (App.java)
+│   └── resources/               # Vistas FXML e imágenes
+└── test/                        # Pruebas JUnit 5
 ```
-
+ 
 ---
-
+ 
+## 🚘 Jerarquía de Vehículos
+ 
+El sistema soporta una amplia variedad de tipos de vehículos organizados por tipo de carrocería y combustible:
+ 
+```
+Vehiculo (abstracto)
+├── VehiculoGasolina → Moto, Deportivo, Camion, Pickup, Camioneta, SUV, Bus, Van, Sedan
+├── VehiculoDiesel   → (mismos tipos)
+├── VehiculoElectrico → (mismos tipos + autonomia/tiempoCarga)
+└── VehiculoHibrido  → (mismos tipos + enchufable/hibridoLigero)
+```
+ 
+---
+ 
+## 👥 Jerarquía de Personas
+ 
+```
+Persona (abstracta)
+├── Cliente      → listatransacciones[]
+├── Empleado     → listatransacciones[], listavehiculos[], listaclientes[]
+└── Administrador → listaempleados[]
+```
+ 
+---
+ 
+## 🔄 Transacciones
+ 
+```
+Transaccion
+├── Venta    → metodopago, garantia
+└── Alquiler → fechaDevolucion, duracionalquiler
+```
+ 
+Cada transacción se asocia automáticamente al cliente, empleado y vehículo correspondientes al momento de su creación.
+ 
+---
+ 
 ## 🛠️ Tecnologías
-
+ 
 | Tecnología | Versión | Uso |
 |---|---|---|
-| Java | 21 | Lenguaje principal |
-| JavaFX | 21 | Interfaz gráfica |
-| Maven | 3.8.5 | Gestión de dependencias |
-| Lombok | 1.18.36 | Reducción de boilerplate |
-| Simple Java Mail | 8.10.1 | Envío de correos |
-| ZXing | 3.5.1 | Generación de códigos QR |
-| JUnit 5 | 5.10.2 | Pruebas unitarias |
-
+| Java | 11 | Lenguaje principal |
+| JavaFX | 13 | Interfaz gráfica |
+| Maven | 3.8+ | Gestión de dependencias |
+| JUnit Jupiter | 5.11.3 | Pruebas unitarias |
+ 
 ---
-
-## ⚙️ Configuración y ejecución
-
+ 
+## ⚙️ Configuración y Ejecución
+ 
 ### Requisitos
-- Java 21 (Temurin recomendado)
+- Java 11+
 - Maven 3.8+
-
 ### Clonar e iniciar
 ```bash
-git clone https://github.com/Juanda2312/ReservasUq.git
-cd ReservasUq
-./mvnw javafx:run
+git clone <url-del-repositorio>
+cd concesionario
+mvn javafx:run
 ```
-
+ 
 ### Ejecutar pruebas
 ```bash
-./mvnw test
+mvn test
 ```
-
+ 
 ---
-
-## 📁 Persistencia
-
-Los datos se almacenan localmente mediante serialización de objetos Java en la carpeta `data/`:
-
-```
-data/
-├── usuarios.data
-├── alojamientos.data
-├── reservas.data
-└── ofertas.data
-```
-
-> La carpeta `data/` se crea automáticamente al iniciar la aplicación.
-
+ 
+## 👤 Credenciales por defecto
+ 
+| Rol | Correo | Contraseña |
+|---|---|---|
+| Administrador | `Pedrosisi@gmail.com` | `12345678` |
+| Administrador (rápido) | `a` | `a` |
+| Empleado | `Paco213@gmail.com` | `0000` |
+| Cliente | `Juanito@gmail.com` | `1234` |
+ 
 ---
-
-## 📧 Configuración de correo
-
-El sistema envía notificaciones automáticas por Gmail. Las credenciales se configuran en:
-
-```
-src/main/java/co/edu/uniquindio/reservasuq/config/Correo.java
-```
-
-> ⚠️ Se recomienda usar una contraseña de aplicación de Google y **no** subir credenciales reales al repositorio.
-
----
-
-## 👤 Credenciales de administrador por defecto
-
-| Campo | Valor |
-|---|---|
-| Correo | `juandavidtapiero22@gmail.com` |
-| Contraseña | `1234` |
-
----
-
-## 📌 Diagrama de entidades principales
-
-```
-Usuario
-├── Cliente  →  Billetera, Reservas[], Resenias[]
-└── Administrador
-
-Alojamiento (abstract)
-├── Hotel      →  Habitacion[]
-├── Casa
-└── Apartamento
-
-Reserva  →  Alojamiento, Cliente, Factura
-Oferta   →  Alojamiento[]
-Resenia  →  titulo, descripcion, valoracion
-```
-
----
-
+ 
 ## 🧪 Pruebas
-
-Las pruebas unitarias se encuentran en `src/test/java/` y cubren los principales casos de uso del servicio central (`EmpresaServicio`):
-
-- Registro de clientes (validaciones de formato y duplicados)
-- Creación de casas, apartamentos, hoteles y habitaciones
-- Gestión de servicios y ofertas
-
+ 
+Las pruebas unitarias están en `src/test/java/` y cubren:
+ 
+- `AdministradorTest` — CRUD de empleados desde el administrador
+- `ConcesionarioTest` — CRUD de transacciones con verificación de asociaciones automáticas
+- `EmpleadoTest` — CRUD de vehículos y clientes del empleado
+- `VehiculoTest` — CRUD de transacciones en el vehículo
 ---
 
 ## 👨‍💻 Autor
